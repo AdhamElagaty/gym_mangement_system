@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,82 @@ namespace gym_management_system.Service
 {
     public class PackgeSupscribtionService
     {
+        public List<PackgeSubscriptionModel> GetPackageSubscriptions()
+        {
+            try
+            {
+                List<PackgeSubscriptionModel> subscriptions = new List<PackgeSubscriptionModel>();
+                string query = @"
+            SELECT
+                ps.id AS package_subscription_id,
+                ps.subscription_date,
+                ps.remain_invatation,
+                m.id AS member_id,
+                m.first_name AS member_first_name,
+                m.second_name AS member_second_name,
+                e.id AS employee_id,
+                e.first_name AS employee_first_name,
+                e.second_name AS employee_second_name,
+                p.id AS package_id,
+                p.name AS package_name
+            FROM
+                packge_subscription ps
+            JOIN
+                member m ON ps.memberID = m.id
+            JOIN
+                employee e ON ps.employeeID = e.id
+            JOIN
+                packge p ON ps.packgeID = p.id";
+                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        PackgeSubscriptionModel subscription = new PackgeSubscriptionModel()
+                        {
+                            Id = Convert.ToInt32(reader["package_subscription_id"]),
+                            StartDate = Convert.ToDateTime(reader["subscription_date"]),
+                            RemainInvatation = Convert.ToInt32(reader["remain_invatation"]),
+
+                            Member = new MemberModel
+                            {
+                                Id = Convert.ToInt32(reader["member_id"]),
+                                FirstName = reader["member_first_name"].ToString(),
+                                SecondName = reader["member_second_name"].ToString(),
+                            },
+
+                            Employee = new EmployeeModel
+                            {
+                                Id = Convert.ToInt32(reader["employee_id"]),
+                                FirstName = reader["employee_first_name"].ToString(),
+                                SecondName = reader["employee_second_name"].ToString(),
+                            },
+
+                            PackgeModel = new PackgeModel
+                            {
+                                Id = Convert.ToInt32(reader["package_id"]),
+                                Name = reader["package_name"].ToString(),
+                            },
+                        };
+
+                        subscriptions.Add(subscription);
+                    }
+
+                    return subscriptions;
+                }
+                else
+                {
+                    Console.WriteLine("Error getting package subscriptions: No records found");
+                    return null;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error getting package subscriptions from MySql: {ex.Message}");
+                return null;
+            }
+        }
         public bool CheckMemberInPackageSubscription(int memberId)
         {
             try

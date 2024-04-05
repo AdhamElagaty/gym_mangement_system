@@ -71,7 +71,6 @@ namespace gym_management_system.Service
                         };
 
                         subscriptions.Add(subscription);
-                        MessageBox.Show(subscription.ClassModel.Name);
                     }
 
                     return subscriptions;
@@ -185,6 +184,88 @@ namespace gym_management_system.Service
             {
                 Console.WriteLine($"Error updating class attributes in MySql: {ex.Message}");
                 return false;
+            }
+        }
+        public List<ClassSubscriptionModel> SearchClassSubscriptions(string search, bool byId = false, bool byDate = false)
+        {
+            try
+            {
+                List<ClassSubscriptionModel> subscriptions = new List<ClassSubscriptionModel>();
+                string query = @"
+            SELECT 
+                cs.id AS class_subscription_id,
+                cs.start_date,
+                cs.num_of_attend,
+                m.id AS member_id,
+                m.first_name AS member_first_name,
+                m.second_name AS member_second_name,
+                e.id AS employee_id,
+                e.first_name AS employee_first_name,
+                e.second_name AS employee_second_name
+            FROM 
+                class_subscription cs
+            JOIN 
+                member m ON cs.memberID = m.id
+            JOIN 
+                employee e ON cs.employeeID = e.id
+            WHERE ";
+
+                if (byId && int.TryParse(search, out int id))
+                {
+                    query += $"cs.id = {id}";
+                }
+                else if (byDate && DateTime.TryParse(search, out DateTime date))
+                {
+                    query += $"cs.start_date = '{date.ToString("yyyy-MM-dd")}'";
+                }
+                else
+                {
+                    Console.WriteLine("Error getting from class_subscription search: No selected search type");
+                    return null;
+                }
+
+                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        ClassSubscriptionModel subscription = new ClassSubscriptionModel
+                        {
+                            Id = Convert.ToInt32(reader["class_subscription_id"]),
+                            StartDate = Convert.ToDateTime(reader["start_date"]),
+                            NumberOfAttend = Convert.ToInt32(reader["num_of_attend"]),
+
+                            Member = new MemberModel
+                            {
+                                Id = Convert.ToInt32(reader["member_id"]),
+                                FirstName = reader["member_first_name"].ToString(),
+                                SecondName = reader["member_second_name"].ToString(),
+                            },
+
+                            Employee = new EmployeeModel
+                            {
+                                Id = Convert.ToInt32(reader["employee_id"]),
+                                FirstName = reader["employee_first_name"].ToString(),
+                                SecondName = reader["employee_second_name"].ToString(),
+                            }
+                        };
+
+                        subscriptions.Add(subscription);
+                    }
+
+                    return subscriptions;
+                }
+                else
+                {
+                    Console.WriteLine($"Error getting from class_subscription search: No records found '{search}'");
+                    return null;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error getting from MySql class_subscription search: {ex.Message}");
+                return null;
             }
         }
         public bool AddClassSubscription(ClassSubscriptionModel classSubscriptionModel)

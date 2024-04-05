@@ -10,40 +10,75 @@ namespace gym_management_system.Service
 {
     public class PaymentService
     {
-        public static List<PaymentModel> GetAllPayments(bool includeMemberData = false, bool includeEmployeeData = false)
+        public List<PaymentModel> GetAllPayments()
         {
             try
             {
                 List<PaymentModel> payments = new List<PaymentModel>();
-                string query = $"SELECT * FROM payments";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
-                if (reader.HasRows)
+                string query = @"
+            SELECT 
+                p.id AS payment_id,
+                p.name AS payment_name,
+                p.amount,
+                p.date,
+                m.id AS member_id,
+                m.first_name AS member_first_name,
+                m.second_name AS member_second_name,
+                e.id AS employee_id,
+                e.first_name AS employee_first_name,
+                e.second_name AS employee_second_name
+            FROM 
+                payment p
+            JOIN 
+                member m ON p.memberID = m.id
+            JOIN 
+                employee e ON p.employeeID = e.id";
+
+                using (MySqlDataReader reader = Global.sqlService.SqlSelect(query))
                 {
-                    while (reader.Read())
+                    if (reader.HasRows)
                     {
-                        PaymentModel payment = new PaymentModel(
-                            id: Convert.ToInt32(reader["id"]),
-                            name: reader["name"].ToString(),
-                            amount: Convert.ToInt32(reader["amount"]),
-                            date: Convert.ToDateTime(reader["date"]),
-                            member: includeMemberData ? new MemberModel(id: Convert.ToInt32(reader["memberID"])) : null,
-                            employee: includeEmployeeData ? new EmployeeModel(id: Convert.ToInt32(reader["employeeID"])) : null
-                        );
+                        while (reader.Read())
+                        {
+                            MemberModel member = new MemberModel
+                            {
+                                Id = Convert.ToInt32(reader["member_id"]),
+                                FirstName = reader["member_first_name"].ToString(),
+                                SecondName = reader["member_second_name"].ToString()
+                            };
 
-                        payments.Add(payment);
+                            EmployeeModel employee = new EmployeeModel
+                            {
+                                Id = Convert.ToInt32(reader["employee_id"]),
+                                FirstName = reader["employee_first_name"].ToString(),
+                                SecondName = reader["employee_second_name"].ToString()
+                            };
+
+                            PaymentModel payment = new PaymentModel
+                            {
+                                Id = Convert.ToInt32(reader["payment_id"]),
+                                Name = reader["payment_name"].ToString(),
+                                Amount = Convert.ToInt32(reader["amount"]),
+                                Date = Convert.ToDateTime(reader["date"]),
+                                Member = member,
+                                Employee = employee
+                            };
+
+                            payments.Add(payment);
+                        }
+
+                        return payments;
                     }
-
-                    return payments;
-                }
-                else
-                {
-                    Console.WriteLine("Error getting from GetAllPayments: No records found");
-                    return null;
+                    else
+                    {
+                        Console.WriteLine("No payment records found.");
+                        return null;
+                    }
                 }
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine($"Error getting from MySql GetAllPayments: {ex.Message}");
+                Console.WriteLine($"Error getting payments from MySQL: {ex.Message}");
                 return null;
             }
         }

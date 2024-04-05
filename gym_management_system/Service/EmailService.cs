@@ -89,5 +89,77 @@ namespace gym_management_system.Service
                 return false;
             }
         }
+
+        public bool AddEmployeeEmail(EmployeeEmailModel employeeEmailModel, Image image = null)
+        {
+            try
+            {
+                if (sendEmail(employeeEmailModel, image))
+                {
+                    string query = $"INSERT INTO employee_email (subject, date, RemployeeID, employeeID) VALUES " +
+                                   $"('{employeeEmailModel.Subject}', now(), " +
+                                   $"{employeeEmailModel.EmployeeModel1.Id}, {employeeEmailModel.EmployeeModel.Id})";
+        
+                    int rowsAffected = Global.sqlService.SqlNonQuery(query);
+        
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Employee email created successfully");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error adding employee email: No rows affected");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Error in send employee email");
+                    return false;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error adding employee email in MySql: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool AddTrainerEmail(TrainerEmailModel trainerEmailModel, Image image = null)
+        {
+            try
+            {
+                if (sendEmail(trainerEmailModel, image))
+                {
+                    string query = $"INSERT INTO trainer_email (subject, date, trainerID, employeeID) VALUES " +
+                                   $"('{trainerEmailModel.Subject}', now(), " +
+                                   $"{trainerEmailModel.TrainerModel.Id}, {trainerEmailModel.EmployeeModel.Id})";
+
+                    int rowsAffected = Global.sqlService.SqlNonQuery(query);
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Trainer email created successfully");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error adding trainer email: No rows affected");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Error in send trainer email");
+                    return false;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error adding trainer email in MySql: {ex.Message}");
+                return false;
+            }
+        }
     }
 }

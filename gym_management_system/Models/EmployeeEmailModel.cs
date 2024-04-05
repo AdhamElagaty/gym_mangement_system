@@ -15,7 +15,7 @@ namespace gym_management_system.Models
             EmployeeModel = employeeModel1;
         }
 
-        public EmployeeModel EmployeeModel1 { get { return employeeModel1; } set { employeeModel1 = value; PersonModel = employeeModel; } }
+        public EmployeeModel EmployeeModel1 { get { return employeeModel1; } set { employeeModel1 = value; PersonModel = employeeModel1; } }
         
         public override PersonModel getreciverData()
         {

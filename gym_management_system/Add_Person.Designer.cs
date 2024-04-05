@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Person));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.textF = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.textS = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.textE = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -72,6 +72,8 @@
             this.bunifuElipse12 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.backgroundWorkeradd = new System.ComponentModel.BackgroundWorker();
             this.labelerrorAdd = new System.Windows.Forms.Label();
+            this.timer_fadding = new System.Windows.Forms.Timer(this.components);
+            this.timer_fadding2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.show_pass_btn2)).BeginInit();
@@ -608,11 +610,11 @@
             this.btnCan.ColorContrastOnClick = 45;
             this.btnCan.ColorContrastOnHover = 45;
             this.btnCan.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnCan.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnCan.CustomizableEdges = borderEdges3;
             this.btnCan.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCan.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
             this.btnCan.DisabledFillColor = System.Drawing.Color.Transparent;
@@ -698,11 +700,11 @@
             this.btnSub.ColorContrastOnClick = 45;
             this.btnSub.ColorContrastOnHover = 45;
             this.btnSub.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnSub.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnSub.CustomizableEdges = borderEdges4;
             this.btnSub.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSub.DisabledBorderColor = System.Drawing.Color.Transparent;
             this.btnSub.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
@@ -846,6 +848,16 @@
             this.labelerrorAdd.Size = new System.Drawing.Size(0, 27);
             this.labelerrorAdd.TabIndex = 46;
             // 
+            // timer_fadding
+            // 
+            this.timer_fadding.Interval = 10;
+            this.timer_fadding.Tick += new System.EventHandler(this.timer_fadding_Tick);
+            // 
+            // timer_fadding2
+            // 
+            this.timer_fadding2.Interval = 7;
+            this.timer_fadding2.Tick += new System.EventHandler(this.timer_fadding2_Tick);
+            // 
             // Add_Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -864,6 +876,7 @@
             this.Name = "Add_Person";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Person";
+            this.Load += new System.EventHandler(this.Add_Person_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -922,5 +935,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox textPP;
         private System.ComponentModel.BackgroundWorker backgroundWorkeradd;
         private System.Windows.Forms.Label labelerrorAdd;
+        private System.Windows.Forms.Timer timer_fadding;
+        private System.Windows.Forms.Timer timer_fadding2;
     }
 }

@@ -15,7 +15,7 @@ namespace gym_management_system.Models
             TrainerModel = trainerModel;
         }
 
-        public TrainerModel TrainerModel { get { return trainerModel; } set { trainerModel = value; } }
+        public TrainerModel TrainerModel { get { return trainerModel; } set { trainerModel = value; personModel = trainerModel; } }
 
         public override PersonModel getreciverData()
         {
@@ -31,7 +31,7 @@ namespace gym_management_system.Models
                 return null;
             }
         }
-        public string createTrainerEmail(TrainerModel trainerModel)
+        public string createTrainerEmail()
         {
             body = $"Hi {trainerModel.FirstName} {trainerModel.SecondName}\n\n" +
                 $"Welcome to the PulseUp Gym team! We are excited to have you on board as a new member of our staff. Your dedication and expertise as a {trainerModel.Specialization} will undoubtedly contribute to the success of our gym.\n\n" +

@@ -21,6 +21,8 @@ namespace gym_management_system.Models
         public int LessonsNum { get { return lessonsNum; } set { lessonsNum = value; } }
 
         public TrainerModel Trainer { get { return trainer; } set { trainer = value; } }
+        public int TrainerId { get { return trainer.Id; } }
+        public string TrainerName { get { return trainer.Name; } }
         public override TrainerModel getDataOfTybeOfSubscription()
         {
             return trainer;

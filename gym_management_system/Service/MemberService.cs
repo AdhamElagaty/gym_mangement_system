@@ -96,13 +96,14 @@ namespace gym_management_system.Service
             }
         }
 
-        public bool addMember(MemberModel memberModel)
+        public MemberModel addMember(MemberModel memberModel)
         {
             try
             {
                 int id = memberModel.generateId();
-                string query = $"INSERT INTO member (id, first_name, second_name, brithday, gender, picture, email, phone_number, attendance_count) VALUES " +
-                               $"('{id}', '{memberModel.FirstName}', '{memberModel.SecondName}', '{memberModel.Brithday.ToString("yyyy-MM-dd")}', " +
+                memberModel.Password = memberModel.Id.ToString();
+                string query = $"INSERT INTO member (id, first_name, second_name, password, brithday, gender, picture, email, phone_number, attendance_count) VALUES " +
+                               $"('{id}', '{memberModel.FirstName}', '{memberModel.SecondName}', '{Global.mangePassword.encrypt_password(memberModel.Password, id)}', '{memberModel.Brithday.ToString("yyyy-MM-dd")}', " +
                                $"'{memberModel.Gender}', '{memberModel.Base64Image}', " +
                                $"'{memberModel.Email}', '{memberModel.PhoneNumber}', {memberModel.AttendanceCount})";
 
@@ -110,18 +111,18 @@ namespace gym_management_system.Service
                 if (rowsAffected > 0)
                 {
                     Console.WriteLine("Member created successfully");
-                    return true;
+                    return memberModel;
                 }
                 else
                 {
                     Console.WriteLine("Error add Member: No rows affected");
-                    return false;
+                    return null;
                 }
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Error add Member in MySql: {ex.Message}");
-                return false;
+                return null;
             }
         }
 

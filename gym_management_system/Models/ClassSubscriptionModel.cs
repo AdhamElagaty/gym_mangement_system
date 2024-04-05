@@ -16,6 +16,7 @@
 
             }
             public ClassModel ClassModel { get { return classModel; } set { classModel = value; } }
+            public string ClassName { get { return classModel.Name; } }
             public override ClassModel getDataOfTybeOfSubscription()
             {
                 return classModel;

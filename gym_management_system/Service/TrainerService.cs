@@ -64,32 +64,32 @@ namespace gym_management_system.Service
             }
         }
 
-        public bool addTrainer(TrainerModel trainerModel)
+        public TrainerModel addTrainer(TrainerModel trainerModel)
         {
             try
             {
                 int id = trainerModel.generateId();
-                string query = $"INSERT INTO trainer (id, first_name, second_name, brithday, gender, picture, email, phone_number, specialization, private_lesson_price) VALUES " +
-                               $"('{id}', '{trainerModel.FirstName}', '{trainerModel.SecondName}', '{trainerModel.Brithday.ToString("yyyy-MM-dd")}', " +
-                               $"'{trainerModel.Gender}', '{trainerModel.Base64Image}', " +
-                               $"'{trainerModel.Email}', '{trainerModel.PhoneNumber}', '{trainerModel.Specialization}', '{trainerModel.PrivateLessonPrice}', '{trainerModel.Status}'";
+                string query = $"INSERT INTO trainer (id, first_name, second_name, brithday, gender, picture, email, phone_number, specialization, private_lesson_price, status) VALUES " +
+               $"('{id}', '{trainerModel.FirstName}', '{trainerModel.SecondName}', '{trainerModel.Brithday.ToString("yyyy-MM-dd")}', " +
+               $"'{trainerModel.Gender}', '{trainerModel.Base64Image}', " +
+               $"'{trainerModel.Email}', '{trainerModel.PhoneNumber}', '{trainerModel.Specialization}', '{trainerModel.PrivateLessonPrice}', {trainerModel.Status})";
 
                 int rowsAffected = Global.sqlService.SqlNonQuery(query);
                 if (rowsAffected > 0)
                 {
                     Console.WriteLine("trainer created successfully");
-                    return true;
+                    return trainerModel;
                 }
                 else
                 {
                     Console.WriteLine("Error add trainer: No rows affected");
-                    return false;
+                    return null;
                 }
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Error add trainer in MySql: {ex.Message}");
-                return false;
+                return null;
             }
         }
 

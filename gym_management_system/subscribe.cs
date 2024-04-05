@@ -24,13 +24,12 @@ namespace gym_management_system
         private List<ClassModel> classes;
         private List<ClassModel> classesListch = new List<ClassModel>();
         private List<MemberModel> memberModels;
-        private List<ClassSubscriptionModel> classsubscriptionModels;
         private EmployeeModel employeeModel;
         private bool can_sub = false, supStatus;
         private int numOfCheckClassP = 0;
         private List<CheckBox> checkedClass;
         private Loading_Indicator loading_Indicator = new Loading_Indicator();
-        private double price, disc;
+        private double price, disc, lesson_price;
         private bool pac = false, mon = false, cla = false, pri = false;
         public subscribe()
         {
@@ -47,6 +46,31 @@ namespace gym_management_system
                 control.Dispose();
             }
             panel.Controls.Clear();
+        }
+
+        private void timer_fadding_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1.0)
+            {
+                this.Opacity += 0.05;
+            }
+            else
+            {
+                timer_fadding.Stop();
+            }
+        }
+
+        private void timer_fadding2_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.05;
+            }
+            else
+            {
+                timer_fadding2.Stop();
+                this.Close();
+            }
         }
 
         public subscribe(PackgeModel model, Image image, EmployeeModel employee)
@@ -151,9 +175,9 @@ namespace gym_management_system
             labelprice.Text = price + "EGP";
             btnSub.Enabled = false;
             panelPrivSup.Visible = true;
+            lesson_price = price;
             textNumlesson.KeyPress += textNumlesson_KeyPress;
         }
-
         private void customCheckboxclasses(int x, int y, ClassModel classModel, Panel p)
         {
             CheckBox checkBox = new CheckBox();
@@ -242,13 +266,12 @@ namespace gym_management_system
 
         private void subscribe_Load(object sender, EventArgs e)
         {
-
+            this.Opacity = 0;
+            timer_fadding.Start();
         }
-        private List<MonthSubscriptionModel> model;
         private void btnCan_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            timer_fadding2.Start();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -290,12 +313,13 @@ namespace gym_management_system
         {
             if (memberModels != null)
             {
+                Image image = Global.mangeImage.ConvertBase64ToImage(memberModels[0].Base64Image);
                 labelName.Text = memberModels[0].Name;
                 labelAge.Text = memberModels[0].Age.ToString();
                 labelPhone.Text = memberModels[0].PhoneNumber;
                 labelEmail.Text = memberModels[0].Email;
                 labelBrithday.Text = memberModels[0].Brithday.ToString("yyyy/MM/dd");
-                bunifuPictureBox1.Image = Global.mangeImage.ConvertBase64ToImage(memberModels[0].Base64Image);
+                bunifuPictureBox1.Image = image == null ? Image.FromFile("system_image\\user.png") : image;
                 panelloading.Visible = false;
                 panelNoDatamember.Visible = false;
                 panelData.Visible = true;
@@ -312,6 +336,16 @@ namespace gym_management_system
                     if (!pac)
                     {
                         btnSub.Enabled = true;
+                    }else if (pri)
+                    {
+                        if(textNumlesson.Text != "Lesson Number")
+                        {
+                            btnSub.Enabled= true;
+                        }
+                        else
+                        {
+                            btnSub.Enabled = false;
+                        }
                     }
                 }
                 if (pac)
@@ -406,6 +440,16 @@ namespace gym_management_system
                 textNumlesson.Text = "Lesson Number";
                 textNumlesson.StateActive.Content.Color1 = Color.FromArgb(255, 115, 115);
                 labelErrorLesson.Text = "Lesson Number Required!";
+            }
+        }
+
+        private void textNumlesson_TextChanged(object sender, EventArgs e)
+        {
+            if(textNumlesson.Text != "Lesson Number")
+            {
+                int.TryParse(textNumlesson.Text, out int x);
+                lesson_price = price * x;
+                labelprice.Text = lesson_price.ToString();
             }
         }
 
@@ -505,7 +549,7 @@ namespace gym_management_system
             }
             else if (pri)
             {
-                if (int.TryParse(textNumlesson.Text, out int num) || textNumlesson.Text == "")
+                if ((int.TryParse(textNumlesson.Text, out int num) && num != 0) || textNumlesson.Text == "")
                 {
                     labelsubError.Invoke((MethodInvoker)delegate
                     {
@@ -514,7 +558,7 @@ namespace gym_management_system
 
                     supStatus = Global.PrivateSubscriptionService.SupscribePrivate(num, memberModels[0], employeeModel, trainerModel);
                     model.Name = "Private Subscribtion" + num + " Lesson With " + trainerModel.Name;
-                    model.Amount = price;
+                    model.Amount = lesson_price;
                     SubjectOfEmail = "New Private Subscribtion";
                     Details = $"Trainer Name: {trainerModel.Name}\n" +
                           $"Trainer specialization: {trainerModel.Specialization}\n" +

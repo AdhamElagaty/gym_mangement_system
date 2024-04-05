@@ -15,12 +15,48 @@ namespace gym_management_system
     {
         private List<MemberModel> members;
         private List<MemberModel> filteredList;
+        private EmployeeModel model;
+        private Main_Form main_Form;
         public Members()
         {
             InitializeComponent();
             panelloading.Visible = true;
             MemberData.AutoGenerateColumns = false;
             backgroundWorkergetMember.RunWorkerAsync();
+        }
+
+        public Members(EmployeeModel employee, Main_Form m)
+        {
+            InitializeComponent();
+            panelloading.Visible = true;
+            MemberData.AutoGenerateColumns = false;
+            backgroundWorkergetMember.RunWorkerAsync();
+            model = employee;
+            main_Form = m;
+        }
+
+        private void timer_fadding_Tick(object sender, EventArgs e)
+        {
+            if (main_Form.Opacity > 0.86)
+            {
+                main_Form.Opacity -= 0.01;
+            }
+            else
+            {
+                timer_fadding.Stop();
+            }
+        }
+
+        private void timer_fadding2_Tick(object sender, EventArgs e)
+        {
+            if (main_Form.Opacity < 1.0)
+            {
+                main_Form.Opacity += 0.01;
+            }
+            else
+            {
+                timer_fadding2.Stop();
+            }
         }
 
         private void backgroundWorkergetMember_DoWork(object sender, DoWorkEventArgs e)
@@ -35,7 +71,7 @@ namespace gym_management_system
                 panelloading.Visible = false;
                 panelconnectionError.Visible = false;
                 panelMemberView.Visible = true;
-                Global.mangeDataGrid.GridRefresh(ref MemberData,members);
+                MemberData = Global.mangeDataGrid.GridRefresh(MemberData,members);
             }
             else
             {
@@ -84,7 +120,7 @@ namespace gym_management_system
         {
             if (filteredList != null)
             {
-                Global.mangeDataGrid.GridRefresh(ref MemberData, filteredList);
+                MemberData = Global.mangeDataGrid.GridRefresh(MemberData, filteredList);
             }
         }
 
@@ -112,8 +148,10 @@ namespace gym_management_system
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Add_Person add_Person = new Add_Person(Mem: true);
+            Add_Person add_Person = new Add_Person(model, Mem: true);
+            timer_fadding.Start();
             add_Person.ShowDialog();
+            timer_fadding2.Start();
             panelloading.Visible = true;
             panelconnectionError.Visible = false;
             panelMemberView.Visible = false;

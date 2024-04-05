@@ -19,6 +19,10 @@ namespace gym_management_system
         public EmployeeModel employee;
         private Home home;
         private Members members;
+        private Employees employees;
+        private Trainer trainer;
+        private Payments payments;
+        private Subscription subscription;
         public Main_Form()
         {
             InitializeComponent();
@@ -65,8 +69,20 @@ namespace gym_management_system
             employee = employeeModel;
             if (employee != null)
             {
-                home = new Home(employeeModel);
-                members = new Members();
+                home = new Home(employeeModel, this);
+                members = new Members(employeeModel, this);
+                employees = new Employees(employeeModel, this);
+                trainer = new Trainer(employeeModel,home, this);
+                subscription = new Subscription();
+                trainer.Tag = home;
+                payments = new Payments();
+                if (!employee.Admin)
+                {
+                    ButtonEmployees.Visible = false;
+                    ButtonTrainer.Visible = false;
+                    ButtonPayments.Visible = false;
+                    ButtonSubscriptions.Visible = false;
+                }
                 if (employee.Picture != null)
                 {
                     PictureBoxAccountProfile.Image = employee.Picture;
@@ -80,6 +96,18 @@ namespace gym_management_system
             else
             {
                 Console.WriteLine("Error! No employee data to load");
+            }
+        }
+
+        private void timer_fadding_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1.0)
+            {
+                this.Opacity += 0.05;
+            }
+            else
+            {
+                timer_fadding.Stop();
             }
         }
 
@@ -170,17 +198,8 @@ namespace gym_management_system
                 ButtonEmployees.Checked = true;
                 return;
             }
+            loadform(employees);
             KryptonButtonSetting(ButtonEmployees);
-        }
-
-        private void ButtonSubscriptions_Click(object sender, EventArgs e)
-        {
-            if (!ButtonSubscriptions.Checked)
-            {
-                ButtonSubscriptions.Checked = true;
-                return;
-            }
-            KryptonButtonSetting(ButtonSubscriptions);
         }
 
         private void ButtonPayments_Click(object sender, EventArgs e)
@@ -191,11 +210,61 @@ namespace gym_management_system
                 return;
             }
             KryptonButtonSetting(ButtonPayments);
+            loadform(payments);
         }
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
             loadform(home);
+            this.Opacity = 0;
+            timer_fadding.Start();
+        }
+
+        private void ButtonTrainer_Click(object sender, EventArgs e)
+        {
+            if (!ButtonTrainer.Checked)
+            {
+                ButtonTrainer.Checked = true;
+                return;
+            }
+            KryptonButtonSetting(ButtonTrainer);
+            loadform(trainer);
+        }
+
+        private void bunifuPictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            bunifuPictureBox1.Image = Image.FromFile("system_image\\x_red(39).png");
+        }
+
+        private void bunifuPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            bunifuPictureBox1.Image = Image.FromFile("system_image\\x(39).png");
+        }
+
+        private void bunifuPictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ButtonSubscriptions_Click(object sender, EventArgs e)
+        {
+            if (!ButtonSubscriptions.Checked)
+            {
+                ButtonSubscriptions.Checked = true;
+                return;
+            }
+            KryptonButtonSetting(ButtonSubscriptions);
+            loadform(subscription);
+        }
+
+        private void ButtonLogOut_Click(object sender, EventArgs e)
+        {
+            if (!ButtonLogOut.Checked)
+            {
+                ButtonLogOut.Checked = true;
+                return;
+            }
+            this.Close();
         }
     }
 }

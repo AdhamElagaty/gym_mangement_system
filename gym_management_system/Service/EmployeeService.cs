@@ -83,7 +83,7 @@ namespace gym_management_system.Service
             }
         }
 
-        public bool addEmployee(EmployeeModel employeeModel)
+        public EmployeeModel addEmployee(EmployeeModel employeeModel)
         {
             try
             {
@@ -98,18 +98,18 @@ namespace gym_management_system.Service
                 if (rowsAffected > 0)
                 {
                     Console.WriteLine("Employee created successfully");
-                    return true;
+                    return employeeModel;
                 }
                 else
                 {
                     Console.WriteLine("Error add employee: No rows affected");
-                    return false;
+                    return null;
                 }
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Error add employee in MySql: {ex.Message}");
-                return false;
+                return null;
             }
         }
 
@@ -216,7 +216,7 @@ namespace gym_management_system.Service
                 {
                     while (reader.Read())
                     {
-                        EmployeeModel em = new EmployeeModel(id: Convert.ToInt32(reader["id"]), firstName: reader["first_name"].ToString(), secondName: reader["second_name"].ToString(), brithday: Convert.ToDateTime(reader["brithday"]), gender: reader["gender"].ToString(), email: reader["email"].ToString(), phoneNumber: reader["phone_number"].ToString(), admin: isAdmin, accountStatus: accountStatus, username: reader["user_name"].ToString());
+                        EmployeeModel em = new EmployeeModel(id: Convert.ToInt32(reader["id"]), firstName: reader["first_name"].ToString(), secondName: reader["second_name"].ToString(), brithday: Convert.ToDateTime(reader["brithday"]), gender: reader["gender"].ToString(), email: reader["email"].ToString(), phoneNumber: reader["phone_number"].ToString(), admin: Convert.ToBoolean(reader["admin"]), accountStatus: Convert.ToBoolean(reader["account_status"]), username: reader["user_name"].ToString());
                         if (includePicture)
                         {
                             em.Picture = Global.mangeImage.ConvertBase64ToImage(reader["picture"].ToString());

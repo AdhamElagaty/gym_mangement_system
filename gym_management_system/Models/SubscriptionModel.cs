@@ -29,6 +29,10 @@ namespace gym_management_system.Models
         public DateTime EndDate { get { return endDate; } set { endDate = value; } }
         public MemberModel Member { get { return member; } set { member = value; } }
         public EmployeeModel Employee { get {  return employee; } set {  employee = value; } }
+        public int MemberId { get { return Member.Id; } }
+        public int EmployeeId { get { return Employee.Id; } }
+        public string MemberName { get { return Member.Name; } }
+        public string EmployeeName { get { return Employee.Name; } }
 
         public EmployeeModel getEmployeeDate()
         {

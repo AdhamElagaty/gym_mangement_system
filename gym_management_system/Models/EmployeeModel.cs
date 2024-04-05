@@ -10,18 +10,16 @@ namespace gym_management_system.Models
     public class EmployeeModel : PersonModel
     {
         private static EmployeeModel instance;
-        private string username, password;
+        private string username;
         private bool admin, accountStatus;
 
         public EmployeeModel(int id = 0, string firstName = null, string secondName = null, string username = null, string password = null, string gender = null, string email = null, string phoneNumber = null, bool admin = false, bool accountStatus = false, DateTime brithday = default, Image picture = null) : base(id: id, firstName: firstName, secondName: secondName, gender: gender, email: email, phoneNumber: phoneNumber, brithday: brithday, picture: picture)
         {
             Username = username;
-            Password = password;
             Admin = admin;
             AccountStatus = accountStatus;
         }
         public string Username { get { return username; } set { username = value; } }
-        public string Password { get { return password; } set { password = value; } }
         public bool Admin { get { return admin; } set { admin = value; } }
         public bool AccountStatus { get { return accountStatus; } set { accountStatus = value; } }
 

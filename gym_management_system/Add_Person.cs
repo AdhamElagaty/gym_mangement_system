@@ -26,6 +26,7 @@ namespace gym_management_system
         private EmployeeModel employee;
         private TrainerModel trainer;
         private Loading_Indicator loading;
+        private EmployeeModel employeemodel;
 
         public Add_Person()
         {
@@ -33,8 +34,18 @@ namespace gym_management_system
             this.AutoScaleDimensions = new SizeF(96F, 96F);
             this.AutoScaleMode = AutoScaleMode.Dpi;
         }
-
-        public Add_Person(bool Mem = false, bool Emp = false, bool Tra = false)
+        private void timer_fadding_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1.0)
+            {
+                this.Opacity += 0.05;
+            }
+            else
+            {
+                timer_fadding.Stop();
+            }
+        }
+        public Add_Person(EmployeeModel model = null, bool Mem = false, bool Emp = false, bool Tra = false)
         {
             InitializeComponent();
             this.AutoScaleDimensions = new SizeF(96F, 96F);
@@ -44,8 +55,10 @@ namespace gym_management_system
             {
                 this.Mem = true;
                 member = new MemberModel();
+                labelSub.Text = "Add Member";
 
-            }else if(Emp)
+            }
+            else if(Emp)
             {
                 this.Emp = true;
                 employee = new EmployeeModel();
@@ -53,7 +66,8 @@ namespace gym_management_system
                 textPass.Visible = true;
                 textCPass.Visible = true;
                 panelR.Visible = true;
-                textU.Text = "UserName";
+                textU.Text = "Username";
+                labelSub.Text = "Add Employee";
             }
             else if (Tra)
             {
@@ -62,8 +76,9 @@ namespace gym_management_system
                 textU.Visible = true;
                 textPP.Visible = true;
                 textU.Text = "Specialization";
+                labelSub.Text = "Add Trainer";
             }
-
+            employeemodel = model;
         }
 
         private void get_gender()
@@ -388,46 +403,56 @@ namespace gym_management_system
 
         private void btnSub_Click(object sender, EventArgs e)
         {
-            if (Emp)
+            try
             {
-                employee.FirstName = textF.Text;
-                employee.SecondName = textS.Text;
-                employee.Admin = Role;
-                employee.AccountStatus = true;
-                employee.Brithday = metroDateTime1.Value;
-                employee.Gender = Gender;
-                employee.Email = textE.Text;
-                employee.PhoneNumber = textP.Text == "Phone" ? null : textP.Text;
-                employee.Username = textU.Text;
-                employee.Password = textPass.Text;
-                employee.Picture = image;
-                employee.Base64Image = base64;
-            }else if (Mem)
+                if (Emp)
+                {
+                    employee.FirstName = textF.Text;
+                    employee.SecondName = textS.Text;
+                    employee.Admin = Role;
+                    employee.AccountStatus = true;
+                    employee.Brithday = metroDateTime1.Value;
+                    employee.Gender = Gender;
+                    employee.Email = textE.Text;
+                    employee.PhoneNumber = textP.Text == "Phone" ? null : textP.Text;
+                    employee.Username = textU.Text;
+                    employee.Password = textPass.Text;
+                    employee.Picture = image;
+                    employee.Base64Image = base64;
+                }
+                else if (Mem)
+                {
+                    member.FirstName = textF.Text;
+                    member.SecondName = textS.Text;
+                    member.Email = textE.Text;
+                    member.Picture = image;
+                    member.Brithday = metroDateTime1.Value;
+                    member.Base64Image = base64;
+                    member.Gender = Gender;
+                    member.PhoneNumber = textP.Text == "Phone" ? null : textP.Text;
+                }
+                else if (Tra)
+                {
+                    trainer.FirstName = textF.Text;
+                    trainer.SecondName = textS.Text;
+                    trainer.Email = textE.Text;
+                    trainer.Picture = image;
+                    trainer.Brithday = metroDateTime1.Value;
+                    trainer.Base64Image = base64;
+                    trainer.Gender = Gender;
+                    trainer.PrivateLessonPrice = Convert.ToInt32(textPP.Text);
+                    trainer.PhoneNumber = textP.Text == "Phone" ? null : textP.Text;
+                    trainer.Specialization = textU.Text;
+                    trainer.Status = true;
+                }
+                loading = new Loading_Indicator();
+                loading.Show();
+                backgroundWorkeradd.RunWorkerAsync();
+            }catch(Exception ex)
             {
-                member.FirstName = textF.Text;
-                member.SecondName = textS.Text;
-                member.Email = textE.Text;
-                member.Picture = image;
-                member.Brithday = metroDateTime1.Value;
-                member.Base64Image = base64;
-                member.Gender = Gender;
-                member.PhoneNumber = textP.Text == "Phone" ? null : textP.Text;
-            }else if (Tra)
-            {
-                trainer.FirstName = textF.Text;
-                trainer.SecondName = textS.Text;
-                trainer.Email = textE.Text;
-                trainer.Picture = image;
-                trainer.Brithday= metroDateTime1.Value;
-                trainer.Base64Image = base64;
-                trainer.Gender = Gender;
-                trainer.PrivateLessonPrice = Convert.ToInt32(textPP.Text);
-                trainer.PhoneNumber = textP.Text == "Phone" ? null : textP.Text;
-                trainer.Status = true;
+                Console.WriteLine($"Error! on backgroundWorkeradd is {ex.Message}");
             }
-            loading = new Loading_Indicator();
-            loading.Show();
-            backgroundWorkeradd.RunWorkerAsync();
+            
         }
 
         private void backgroundWorkeradd_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -435,6 +460,7 @@ namespace gym_management_system
             if (status_Add)
             {
                 labelerrorAdd.Text = string.Empty;
+                this.Close();
             }
             else
             {
@@ -443,17 +469,81 @@ namespace gym_management_system
             loading.Close();
         }
 
+        private void Add_Person_Load(object sender, EventArgs e)
+        {
+            this.Opacity = 0;
+            timer_fadding.Start();
+        }
+
+        private void timer_fadding2_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.05;
+            }
+            else
+            {
+                timer_fadding2.Stop();
+                this.Close();
+            }
+        }
+
         private void backgroundWorkeradd_DoWork(object sender, DoWorkEventArgs e)
         {
+            
             if (Emp)
             {
-                status_Add = Global.employeeService.addEmployee(employee);
-            }else if (Mem)
+                EmployeeEmailModel emailModel = new EmployeeEmailModel();
+                employee = Global.employeeService.addEmployee(employee);
+                emailModel.EmployeeModel1 = employee;
+                emailModel.EmployeeModel = employeemodel;
+                emailModel.Subject = "Welcome " + employee.Name;
+                emailModel.Body = emailModel.createEmployeeEmail();
+                Global.emailService.AddEmployeeEmail(emailModel);
+                if(employee != null)
+                {
+                    status_Add = true;
+                }
+                else
+                {
+                    status_Add = false;
+                }
+            }
+            else if (Mem)
             {
-                status_Add = Global.memberService.addMember(member);
-            }else if (Tra)
+                MemberEmailModel memberEmailModel = new MemberEmailModel();
+                member = Global.memberService.addMember(member);
+                memberEmailModel.EmployeeModel = employeemodel;
+                memberEmailModel.MemberModel = member;
+                memberEmailModel.Subject = "Welcome " + member.Name;
+                memberEmailModel.Body = memberEmailModel.createMemberEmail();
+                Global.emailService.AddMemberEmail(memberEmailModel);
+                if (member != null)
+                {
+                    status_Add = true;
+                }
+                else
+                {
+                    status_Add = false;
+                }
+            }
+            else if (Tra)
             {
-                status_Add = Global.trainerService.addTrainer(trainer);
+                TrainerEmailModel trainerEmailModel = new TrainerEmailModel();
+                trainer = Global.trainerService.addTrainer(trainer);
+                trainerEmailModel.EmployeeModel = employeemodel;
+                trainerEmailModel.TrainerModel = trainer;
+                trainerEmailModel.Subject = "Welcome "+ trainer.Name;
+                trainerEmailModel.Body = trainerEmailModel.createTrainerEmail();
+                Global.emailService.AddTrainerEmail(trainerEmailModel);
+                if (trainer != null)
+                {
+                    status_Add = true;
+                }
+                else
+                {
+                    status_Add = false;
+                }
             }
         }
 
@@ -502,7 +592,7 @@ namespace gym_management_system
 
         private void btnCan_Click(object sender, EventArgs e)
         {
-            this.Close();
+            timer_fadding2.Start();
         }
     }
 }

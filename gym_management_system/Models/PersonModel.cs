@@ -11,14 +11,15 @@ namespace gym_management_system.Models
     public abstract class PersonModel
     {
         protected int id, age;
-        protected string firstName, secondName, gender, email, phoneNumber, base64Image;
+        protected string firstName, secondName, gender, email, phoneNumber, base64Image, password;
         protected DateTime brithday;
         protected Image picture;
-        public PersonModel(int id = 0, string firstName = null, string secondName = null, string gender = null, string email = null, string phoneNumber = null, DateTime brithday = default, Image picture = null, string base64Image = null)
+        public PersonModel(int id = 0, string firstName = null, string secondName = null,string password = null, string gender = null, string email = null, string phoneNumber = null, DateTime brithday = default, Image picture = null, string base64Image = null)
         {
             Id = id;
             FirstName = firstName;
             SecondName = secondName;
+            Password = password;
             Gender = gender;
             Email = email;
             PhoneNumber = phoneNumber;
@@ -37,6 +38,7 @@ namespace gym_management_system.Models
         public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
         public Image Picture { get { return picture; } set { picture = value; } }
         public string Base64Image { get { return base64Image; } set { base64Image = value; } }
+        public string Password { get { return password; } set { password = value; } }
         private int CalculateAge()
         {
             DateTime currentDate = DateTime.Now;

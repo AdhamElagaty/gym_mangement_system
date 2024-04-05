@@ -1,5 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using gym_management_system.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,26 @@ namespace gym_management_system
     {
         private EmployeeModel employeeModel = Global.employeeModel;
         private Loading_Indicator loadingIndicator;
-        public Login_form()
+        bool conState = false;
+        public Login_form(bool CS)
         {
             InitializeComponent();
             loadingIndicator = new Loading_Indicator();
             this.AutoScaleDimensions = new SizeF(96F, 96F);
             this.AutoScaleMode = AutoScaleMode.Dpi;
+            conState = CS;
+            if (conState)
+            {
+                panellog.Visible = true;
+                panelconnectionerrorpackage.Visible = false;
+                panelloadingCon.Visible = false;
+            }
+            else
+            {
+                panellog.Visible = false;
+                panelconnectionerrorpackage.Visible = true;
+                panelloadingCon.Visible = false;
+            }
         }
 
         private void TexteBox_Enter(ref KryptonTextBox t)
@@ -180,12 +195,73 @@ namespace gym_management_system
                     Main_Form mainForm = new Main_Form(employeeModel);
                     this.Visible = false;
                     mainForm.ShowDialog();
-                    this.Visible = true;
+                    try
+                    {
+                        this.Visible = true;
+                    }catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                    
                 }
             }
             else
             {
                 lab_login_error.Text = "Username or Password is InCorrect";
+            }
+        }
+
+        private void bunifuPictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bunifuPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            bunifuPictureBox1.Image = Image.FromFile("system_image\\x(39).png");
+        }
+
+        private void bunifuPictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            bunifuPictureBox1.Image = Image.FromFile("system_image\\x_red(39).png");
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            panelloadingCon.Visible = true;
+            panellog.Visible = false;
+            panelconnectionerrorpackage.Visible = false;
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                MySqlConnection con = Global.sqlService.connection;
+                con.Open();
+                conState = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in connection : {ex.Message}");
+                conState = false;
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (conState)
+            {
+                panellog.Visible = true;
+                panelconnectionerrorpackage.Visible = false;
+                panelloadingCon.Visible = false;
+            }
+            else
+            {
+                panellog.Visible = false;
+                panelloadingCon.Visible = false;
+                panelconnectionerrorpackage.Visible = true;
             }
         }
     }

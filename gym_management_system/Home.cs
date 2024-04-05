@@ -26,6 +26,7 @@ namespace gym_management_system
         private List<Image> images = new List<Image>();
         private EmployeeModel employeeModel;
         private bool firstGetData = false;
+        private Main_Form main_Form;
         public class DoubleBufferedPanel : Panel
         {
             public DoubleBufferedPanel()
@@ -48,7 +49,7 @@ namespace gym_management_system
             images.Add(Image.FromFile("system_image\\pkg4.png"));
         }
 
-        public Home(EmployeeModel employeeModel)
+        public Home(EmployeeModel employeeModel, Main_Form m)
         {
             InitializeComponent();
             panelschdata.Visible = false;
@@ -66,6 +67,7 @@ namespace gym_management_system
             images[2].Tag = "system_image\\pkg3_light.png";
             images[3].Tag = "system_image\\pkg4_light.png";
             this.employeeModel = employeeModel;
+            main_Form = m;
         }
         public void resize_shedual_min()
         {
@@ -80,6 +82,39 @@ namespace gym_management_system
             DoubleBuffered = true;
             panel4.Location = new Point(x, y);
             DoubleBuffered = true;
+        }
+
+        private void RemoveAllControlsFromPanel(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                control.Dispose();
+            }
+            panel.Controls.Clear();
+        }
+
+        private void timer_fadding_Tick(object sender, EventArgs e)
+        {
+            if (main_Form.Opacity > 0.86)
+            {
+                main_Form.Opacity -= 0.01;
+            }
+            else
+            {
+                timer_fadding.Stop();
+            }
+        }
+
+        private void timer_fadding2_Tick(object sender, EventArgs e)
+        {
+            if (main_Form.Opacity < 1.0)
+            {
+                main_Form.Opacity += 0.01;
+            }
+            else
+            {
+                timer_fadding2.Stop();
+            }
         }
 
         private void customPackgePanel(int x, int y, PackgeModel packgeModel, Image image)
@@ -332,13 +367,17 @@ namespace gym_management_system
                 if ((control.Parent is DoubleBufferedPanel panel && panel.Tag is PackgeModel packgeModel))
                 {
                     subscribe subscribe = new subscribe(packgeModel, Image.FromFile(panel.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                     return;
                 }
                 if (control.Tag is PackgeModel packgeModel1)
                 {
                     subscribe subscribe = new subscribe(packgeModel1, Image.FromFile(control.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                 }
             }
         }
@@ -350,13 +389,17 @@ namespace gym_management_system
                 if ((control.Parent is DoubleBufferedPanel panel && panel.Tag is MonthOfferModel monthOfferModel))
                 {
                     subscribe subscribe = new subscribe(monthOfferModel, Image.FromFile(panel.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                     return;
                 }
                 if (control.Tag is MonthOfferModel monthOfferModel1)
                 {
                     subscribe subscribe = new subscribe(monthOfferModel1, Image.FromFile(control.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                 }
             }
         }
@@ -368,13 +411,17 @@ namespace gym_management_system
                 if ((control.Parent is DoubleBufferedPanel panel && panel.Tag is ClassModel classModel))
                 {
                     subscribe subscribe = new subscribe(classModel, Image.FromFile(panel.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                     return;
                 }
                 if (control.Tag is ClassModel classModel1)
                 {
                     subscribe subscribe = new subscribe(classModel1, Image.FromFile(control.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                 }
             }
         }
@@ -386,33 +433,37 @@ namespace gym_management_system
                 if ((control.Parent is DoubleBufferedPanel panel && panel.Tag is TrainerModel trainerModel))
                 {
                     subscribe subscribe = new subscribe(trainerModel, Image.FromFile(panel.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                     return;
                 }
                 if (control.Tag is TrainerModel trainerModel1)
                 {
                     subscribe subscribe = new subscribe(trainerModel1, Image.FromFile(control.BackgroundImage.Tag.ToString()), employeeModel);
+                    timer_fadding.Start();
                     subscribe.ShowDialog();
+                    timer_fadding2.Start();
                 }
             }
         }
 
-        private void loadClass()
+        public void loadClass()
         {
             classModels = Global.classService.GetAllClasses(true,true);
         }
 
-        private void loadPackage()
+        public void loadPackage()
         {
             packgeModels = Global.packgeService.GetAllPackages(true);
         }
 
-        private void loadMonth()
+        public void loadMonth()
         {
             monthOfferModels = Global.monthOfferService.GetAllMonthOffers();
         }
 
-        private void loadTrainer()
+        public void loadTrainer()
         {
             trainersModels = Global.trainerService.getAllTrainer(true,false);
         }
@@ -871,6 +922,7 @@ namespace gym_management_system
             int x = 10;
             if(packgeModels != null)
             {
+                RemoveAllControlsFromPanel(panelPackage);
                 int count = 0;
                 foreach (PackgeModel model in packgeModels)
                 {
@@ -927,6 +979,7 @@ namespace gym_management_system
             int x = 10;
             if (monthOfferModels != null)
             {
+                RemoveAllControlsFromPanel(panelMonth);
                 int count = 0;
                 foreach (MonthOfferModel model in monthOfferModels)
                 {
@@ -979,6 +1032,7 @@ namespace gym_management_system
             int x = 10;
             if (classModels != null)
             {
+                RemoveAllControlsFromPanel(panelClass);
                 int count = 0;
                 foreach (ClassModel model in classModels)
                 {
@@ -1038,6 +1092,7 @@ namespace gym_management_system
             int x = 10;
             if (trainersModels != null)
             {
+                RemoveAllControlsFromPanel(panelTrainer);
                 int count = 0;
                 foreach (TrainerModel model in trainersModels)
                 {
@@ -1061,7 +1116,26 @@ namespace gym_management_system
         {
             try
             {
-                backgroundWorkerClsss.RunWorkerAsync();
+                backgroundWorkertrainer.RunWorkerAsync();
+                panelloadingtrainer.Visible = true;
+                panelTrainer.Visible = false;
+                panelconnectionerrortrainer.Visible = false;
+            }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine($"Error! from connection: {ex.Message}");
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Error! from connection: {ex.Message}");
+            }
+        }
+
+        public void refTdata()
+        {
+            try
+            {
+                backgroundWorkertrainer.RunWorkerAsync();
                 panelloadingtrainer.Visible = true;
                 panelTrainer.Visible = false;
                 panelconnectionerrortrainer.Visible = false;

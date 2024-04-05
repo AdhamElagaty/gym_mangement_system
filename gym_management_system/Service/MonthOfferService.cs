@@ -141,7 +141,6 @@ namespace gym_management_system.Service
         }
 
 
-        //to appear all offer
 
         public List<MonthOfferModel> GetAllMonthOffers()
         {

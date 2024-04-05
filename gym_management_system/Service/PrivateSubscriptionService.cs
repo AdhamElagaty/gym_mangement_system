@@ -5,11 +5,92 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace gym_management_system.Service
 {
     public class PrivateSubscriptionService
     {
+        public List<PrivateSubscriptionModel> GetPrivateSubscriptions()
+        {
+            try
+            {
+                List<PrivateSubscriptionModel> subscriptions = new List<PrivateSubscriptionModel>();
+                string query = @"
+            SELECT
+                ps.id AS private_subscription_id,
+                ps.num_of_attend,
+                ps.subscription_date,
+                ps.lessons_number,
+                m.id AS member_id,
+                m.first_name AS member_first_name,
+                m.second_name AS member_second_name,
+                e.id AS employee_id,
+                e.first_name AS employee_first_name,
+                e.second_name AS employee_second_name,
+                t.id AS trainer_id,
+                t.first_name AS trainer_first_name,
+                t.second_name AS trainer_second_name
+            FROM
+                private_subscription ps
+            JOIN
+                member m ON ps.memberID = m.id
+            JOIN
+                employee e ON ps.employeeID = e.id
+            JOIN
+                trainer t ON ps.trainerID = t.id";
+                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        PrivateSubscriptionModel subscription = new PrivateSubscriptionModel
+                        {
+                            Id = Convert.ToInt32(reader["private_subscription_id"]),
+                            NumberOfAttend = Convert.ToInt32(reader["num_of_attend"]),
+                            StartDate = Convert.ToDateTime(reader["subscription_date"]),
+                            LessonsNum = Convert.ToInt32(reader["lessons_number"]),
+
+                            Member = new MemberModel
+                            {
+                                Id = Convert.ToInt32(reader["member_id"]),
+                                FirstName = reader["member_first_name"].ToString(),
+                                SecondName = reader["member_second_name"].ToString(),
+                            },
+
+                            Employee = new EmployeeModel
+                            {
+                                Id = Convert.ToInt32(reader["employee_id"]),
+                                FirstName = reader["employee_first_name"].ToString(),
+                                SecondName = reader["employee_second_name"].ToString(),
+                            },
+
+                            Trainer = new TrainerModel
+                            {
+                                Id = Convert.ToInt32(reader["trainer_id"]),
+                                FirstName = reader["trainer_first_name"].ToString(),
+                                SecondName = reader["trainer_second_name"].ToString(),
+                            },
+                        };
+
+                        subscriptions.Add(subscription);
+                    }
+
+                    return subscriptions;
+                }
+                else
+                {
+                    Console.WriteLine("Error getting private subscriptions: No records found");
+                    return null;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine($"Error getting private subscriptions from MySql: {ex.Message}");
+                return null;
+            }
+        }
         public static List<PrivateSubscriptionModel> SearchPrivateSubscriptions(string searchParam, bool byId = true, bool byDate = false)
         {
             try
@@ -247,7 +328,6 @@ namespace gym_management_system.Service
                     {
                         while (reader.Read())
                         {
-                            // Create instances of MemberModel, EmployeeModel, TrainerModel, and PrivateSubscriptionModel
                             MemberModel member = new MemberModel
                             {
                                 Id = Convert.ToInt32(reader["memberID"]),
