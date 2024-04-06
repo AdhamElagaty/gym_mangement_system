@@ -163,7 +163,7 @@ namespace gym_management_system
             this.AutoScaleDimensions = new SizeF(96F, 96F);
             this.AutoScaleMode = AutoScaleMode.Dpi;
             btnCan.Focus();
-            labelSub.Text = "Class Subscribtion";
+            labelSub.Text = "Private Subscribtion";
             panelData.Visible = false;
             labelSub.Focus();
             trainerModel = model;
@@ -373,6 +373,7 @@ namespace gym_management_system
                 panelloading.Visible = false;
                 panelNoDatamember.Visible = true;
                 panelData.Visible = false;
+                bunifuPictureBox1.Image = Image.FromFile("system_image\\user.png");
                 if (pac)
                 {
                     panelloadingclassP.Visible = false;

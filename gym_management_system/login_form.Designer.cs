@@ -30,40 +30,40 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_form));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.textUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.textPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.show_pass_btn = new System.Windows.Forms.PictureBox();
-            this.hide_pass_btn = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.lab_login_error = new System.Windows.Forms.Label();
-            this.lab_pass_err = new System.Windows.Forms.Label();
-            this.lab_username_err = new System.Windows.Forms.Label();
-            this.backgroundWorkerLogin = new System.ComponentModel.BackgroundWorker();
-            this.panellog = new System.Windows.Forms.Panel();
+            this.panelloadingCon = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelconnectionerrorpackage = new System.Windows.Forms.Panel();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panellog = new System.Windows.Forms.Panel();
+            this.btnLogin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.hide_pass_btn = new System.Windows.Forms.PictureBox();
+            this.show_pass_btn = new System.Windows.Forms.PictureBox();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lab_login_error = new System.Windows.Forms.Label();
+            this.lab_pass_err = new System.Windows.Forms.Label();
+            this.lab_username_err = new System.Windows.Forms.Label();
+            this.backgroundWorkerLogin = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panelloadingCon = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.show_pass_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hide_pass_btn)).BeginInit();
-            this.panellog.SuspendLayout();
-            this.panelconnectionerrorpackage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelloadingCon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelconnectionerrorpackage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panellog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hide_pass_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show_pass_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -157,7 +157,6 @@
             this.panel1.Controls.Add(this.panelconnectionerrorpackage);
             this.panel1.Controls.Add(this.panellog);
             this.panel1.Controls.Add(this.bunifuPictureBox1);
-            this.panel1.Controls.Add(this.lab_login_error);
             this.panel1.Controls.Add(this.lab_pass_err);
             this.panel1.Controls.Add(this.lab_username_err);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -166,207 +165,23 @@
             this.panel1.Size = new System.Drawing.Size(971, 631);
             this.panel1.TabIndex = 0;
             // 
-            // bunifuPictureBox1
+            // panelloadingCon
             // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
-            this.bunifuPictureBox1.BorderRadius = 17;
-            this.bunifuPictureBox1.Image = global::gym_management_system.Properties.Resources.x_39_;
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(920, 17);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 38;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            this.bunifuPictureBox1.Click += new System.EventHandler(this.bunifuPictureBox1_Click);
-            this.bunifuPictureBox1.MouseLeave += new System.EventHandler(this.bunifuPictureBox1_MouseLeave);
-            this.bunifuPictureBox1.MouseHover += new System.EventHandler(this.bunifuPictureBox1_MouseHover);
+            this.panelloadingCon.Controls.Add(this.pictureBox3);
+            this.panelloadingCon.Location = new System.Drawing.Point(572, 175);
+            this.panelloadingCon.Name = "panelloadingCon";
+            this.panelloadingCon.Size = new System.Drawing.Size(270, 331);
+            this.panelloadingCon.TabIndex = 41;
             // 
-            // label1
+            // pictureBox3
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Gilroy-Bold", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(52, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 69);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Welcome";
-            // 
-            // show_pass_btn
-            // 
-            this.show_pass_btn.BackColor = System.Drawing.Color.Transparent;
-            this.show_pass_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.show_pass_btn.Image = global::gym_management_system.Properties.Resources.eye_2;
-            this.show_pass_btn.Location = new System.Drawing.Point(342, 282);
-            this.show_pass_btn.Name = "show_pass_btn";
-            this.show_pass_btn.Size = new System.Drawing.Size(68, 43);
-            this.show_pass_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.show_pass_btn.TabIndex = 35;
-            this.show_pass_btn.TabStop = false;
-            this.show_pass_btn.Visible = false;
-            this.show_pass_btn.Click += new System.EventHandler(this.show_pass_btn_Click);
-            // 
-            // hide_pass_btn
-            // 
-            this.hide_pass_btn.BackColor = System.Drawing.Color.Transparent;
-            this.hide_pass_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hide_pass_btn.Image = global::gym_management_system.Properties.Resources.eye_crossed_1;
-            this.hide_pass_btn.Location = new System.Drawing.Point(342, 282);
-            this.hide_pass_btn.Name = "hide_pass_btn";
-            this.hide_pass_btn.Size = new System.Drawing.Size(68, 43);
-            this.hide_pass_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.hide_pass_btn.TabIndex = 36;
-            this.hide_pass_btn.TabStop = false;
-            this.hide_pass_btn.Visible = false;
-            this.hide_pass_btn.Click += new System.EventHandler(this.hide_pass_btn_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.AllowAnimations = true;
-            this.btnLogin.AllowMouseEffects = true;
-            this.btnLogin.AllowToggling = true;
-            this.btnLogin.AnimationSpeed = 200;
-            this.btnLogin.AutoGenerateColors = false;
-            this.btnLogin.AutoRoundBorders = false;
-            this.btnLogin.AutoSizeLeftIcon = true;
-            this.btnLogin.AutoSizeRightIcon = true;
-            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogin.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
-            this.btnLogin.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLogin.ButtonText = "Login";
-            this.btnLogin.ButtonTextMarginLeft = 0;
-            this.btnLogin.ColorContrastOnClick = 45;
-            this.btnLogin.ColorContrastOnHover = 45;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnLogin.CustomizableEdges = borderEdges2;
-            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLogin.DisabledBorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnLogin.Font = new System.Drawing.Font("Gilroy-SemiBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnLogin.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnLogin.IconMarginLeft = 11;
-            this.btnLogin.IconPadding = 10;
-            this.btnLogin.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogin.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnLogin.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnLogin.IconSize = 25;
-            this.btnLogin.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btnLogin.IdleBorderRadius = 30;
-            this.btnLogin.IdleBorderThickness = 1;
-            this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.IdleIconLeftImage = null;
-            this.btnLogin.IdleIconRightImage = null;
-            this.btnLogin.IndicateFocus = false;
-            this.btnLogin.Location = new System.Drawing.Point(103, 385);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin.OnDisabledState.BorderRadius = 30;
-            this.btnLogin.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLogin.OnDisabledState.BorderThickness = 1;
-            this.btnLogin.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.OnDisabledState.IconLeftImage = null;
-            this.btnLogin.OnDisabledState.IconRightImage = null;
-            this.btnLogin.onHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.btnLogin.onHoverState.BorderRadius = 30;
-            this.btnLogin.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLogin.onHoverState.BorderThickness = 1;
-            this.btnLogin.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.onHoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.onHoverState.IconLeftImage = null;
-            this.btnLogin.onHoverState.IconRightImage = null;
-            this.btnLogin.OnIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.btnLogin.OnIdleState.BorderRadius = 30;
-            this.btnLogin.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLogin.OnIdleState.BorderThickness = 1;
-            this.btnLogin.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.OnIdleState.IconLeftImage = null;
-            this.btnLogin.OnIdleState.IconRightImage = null;
-            this.btnLogin.OnPressedState.BorderColor = System.Drawing.Color.Empty;
-            this.btnLogin.OnPressedState.BorderRadius = 30;
-            this.btnLogin.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLogin.OnPressedState.BorderThickness = 1;
-            this.btnLogin.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
-            this.btnLogin.OnPressedState.IconLeftImage = null;
-            this.btnLogin.OnPressedState.IconRightImage = null;
-            this.btnLogin.Size = new System.Drawing.Size(163, 71);
-            this.btnLogin.TabIndex = 34;
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLogin.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnLogin.TextMarginLeft = 0;
-            this.btnLogin.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnLogin.UseDefaultRadiusAndThickness = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // lab_login_error
-            // 
-            this.lab_login_error.AutoSize = true;
-            this.lab_login_error.BackColor = System.Drawing.Color.Transparent;
-            this.lab_login_error.Font = new System.Drawing.Font("Ubuntu", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_login_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.lab_login_error.Location = new System.Drawing.Point(520, 552);
-            this.lab_login_error.Name = "lab_login_error";
-            this.lab_login_error.Size = new System.Drawing.Size(0, 26);
-            this.lab_login_error.TabIndex = 33;
-            // 
-            // lab_pass_err
-            // 
-            this.lab_pass_err.AutoSize = true;
-            this.lab_pass_err.BackColor = System.Drawing.Color.Transparent;
-            this.lab_pass_err.Font = new System.Drawing.Font("Ubuntu", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_pass_err.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.lab_pass_err.Location = new System.Drawing.Point(545, 435);
-            this.lab_pass_err.Name = "lab_pass_err";
-            this.lab_pass_err.Size = new System.Drawing.Size(0, 27);
-            this.lab_pass_err.TabIndex = 32;
-            // 
-            // lab_username_err
-            // 
-            this.lab_username_err.AutoSize = true;
-            this.lab_username_err.BackColor = System.Drawing.Color.Transparent;
-            this.lab_username_err.Font = new System.Drawing.Font("Ubuntu", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab_username_err.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.lab_username_err.Location = new System.Drawing.Point(545, 329);
-            this.lab_username_err.Name = "lab_username_err";
-            this.lab_username_err.Size = new System.Drawing.Size(0, 27);
-            this.lab_username_err.TabIndex = 31;
-            // 
-            // backgroundWorkerLogin
-            // 
-            this.backgroundWorkerLogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerLogin_DoWork);
-            this.backgroundWorkerLogin.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerLogin_RunWorkerCompleted);
-            // 
-            // panellog
-            // 
-            this.panellog.Controls.Add(this.textPassword);
-            this.panellog.Controls.Add(this.btnLogin);
-            this.panellog.Controls.Add(this.label1);
-            this.panellog.Controls.Add(this.hide_pass_btn);
-            this.panellog.Controls.Add(this.textUsername);
-            this.panellog.Controls.Add(this.show_pass_btn);
-            this.panellog.Location = new System.Drawing.Point(489, 70);
-            this.panellog.Name = "panellog";
-            this.panellog.Size = new System.Drawing.Size(423, 519);
-            this.panellog.TabIndex = 39;
-            this.panellog.Visible = false;
+            this.pictureBox3.Image = global::gym_management_system.Properties.Resources._154039234778Fitness_Center;
+            this.pictureBox3.Location = new System.Drawing.Point(-6, -31);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(290, 362);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // panelconnectionerrorpackage
             // 
@@ -490,28 +305,213 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // panellog
+            // 
+            this.panellog.Controls.Add(this.textPassword);
+            this.panellog.Controls.Add(this.btnLogin);
+            this.panellog.Controls.Add(this.label1);
+            this.panellog.Controls.Add(this.hide_pass_btn);
+            this.panellog.Controls.Add(this.lab_login_error);
+            this.panellog.Controls.Add(this.textUsername);
+            this.panellog.Controls.Add(this.show_pass_btn);
+            this.panellog.Location = new System.Drawing.Point(489, 70);
+            this.panellog.Name = "panellog";
+            this.panellog.Size = new System.Drawing.Size(423, 519);
+            this.panellog.TabIndex = 39;
+            this.panellog.Visible = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.AllowAnimations = true;
+            this.btnLogin.AllowMouseEffects = true;
+            this.btnLogin.AllowToggling = true;
+            this.btnLogin.AnimationSpeed = 200;
+            this.btnLogin.AutoGenerateColors = false;
+            this.btnLogin.AutoRoundBorders = false;
+            this.btnLogin.AutoSizeLeftIcon = true;
+            this.btnLogin.AutoSizeRightIcon = true;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
+            this.btnLogin.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogin.ButtonText = "Login";
+            this.btnLogin.ButtonTextMarginLeft = 0;
+            this.btnLogin.ColorContrastOnClick = 45;
+            this.btnLogin.ColorContrastOnHover = 45;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnLogin.CustomizableEdges = borderEdges2;
+            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLogin.DisabledBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnLogin.Font = new System.Drawing.Font("Gilroy-SemiBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnLogin.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnLogin.IconMarginLeft = 11;
+            this.btnLogin.IconPadding = 10;
+            this.btnLogin.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogin.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnLogin.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnLogin.IconSize = 25;
+            this.btnLogin.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnLogin.IdleBorderRadius = 30;
+            this.btnLogin.IdleBorderThickness = 1;
+            this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.IdleIconLeftImage = null;
+            this.btnLogin.IdleIconRightImage = null;
+            this.btnLogin.IndicateFocus = false;
+            this.btnLogin.Location = new System.Drawing.Point(103, 385);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin.OnDisabledState.BorderRadius = 30;
+            this.btnLogin.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogin.OnDisabledState.BorderThickness = 1;
+            this.btnLogin.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnDisabledState.IconLeftImage = null;
+            this.btnLogin.OnDisabledState.IconRightImage = null;
+            this.btnLogin.onHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.btnLogin.onHoverState.BorderRadius = 30;
+            this.btnLogin.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogin.onHoverState.BorderThickness = 1;
+            this.btnLogin.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.onHoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.onHoverState.IconLeftImage = null;
+            this.btnLogin.onHoverState.IconRightImage = null;
+            this.btnLogin.OnIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.btnLogin.OnIdleState.BorderRadius = 30;
+            this.btnLogin.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogin.OnIdleState.BorderThickness = 1;
+            this.btnLogin.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnIdleState.IconLeftImage = null;
+            this.btnLogin.OnIdleState.IconRightImage = null;
+            this.btnLogin.OnPressedState.BorderColor = System.Drawing.Color.Empty;
+            this.btnLogin.OnPressedState.BorderRadius = 30;
+            this.btnLogin.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogin.OnPressedState.BorderThickness = 1;
+            this.btnLogin.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(120)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnPressedState.IconLeftImage = null;
+            this.btnLogin.OnPressedState.IconRightImage = null;
+            this.btnLogin.Size = new System.Drawing.Size(163, 71);
+            this.btnLogin.TabIndex = 34;
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLogin.TextMarginLeft = 0;
+            this.btnLogin.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnLogin.UseDefaultRadiusAndThickness = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Gilroy-Bold", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(52, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(273, 69);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Welcome";
+            // 
+            // hide_pass_btn
+            // 
+            this.hide_pass_btn.BackColor = System.Drawing.Color.Transparent;
+            this.hide_pass_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hide_pass_btn.Image = global::gym_management_system.Properties.Resources.eye_crossed_1;
+            this.hide_pass_btn.Location = new System.Drawing.Point(342, 282);
+            this.hide_pass_btn.Name = "hide_pass_btn";
+            this.hide_pass_btn.Size = new System.Drawing.Size(68, 43);
+            this.hide_pass_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hide_pass_btn.TabIndex = 36;
+            this.hide_pass_btn.TabStop = false;
+            this.hide_pass_btn.Visible = false;
+            this.hide_pass_btn.Click += new System.EventHandler(this.hide_pass_btn_Click);
+            // 
+            // show_pass_btn
+            // 
+            this.show_pass_btn.BackColor = System.Drawing.Color.Transparent;
+            this.show_pass_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.show_pass_btn.Image = global::gym_management_system.Properties.Resources.eye_2;
+            this.show_pass_btn.Location = new System.Drawing.Point(342, 282);
+            this.show_pass_btn.Name = "show_pass_btn";
+            this.show_pass_btn.Size = new System.Drawing.Size(68, 43);
+            this.show_pass_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.show_pass_btn.TabIndex = 35;
+            this.show_pass_btn.TabStop = false;
+            this.show_pass_btn.Visible = false;
+            this.show_pass_btn.Click += new System.EventHandler(this.show_pass_btn_Click);
+            // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(25)))));
+            this.bunifuPictureBox1.BorderRadius = 17;
+            this.bunifuPictureBox1.Image = global::gym_management_system.Properties.Resources.x_39_;
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(920, 17);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 38;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.bunifuPictureBox1.Click += new System.EventHandler(this.bunifuPictureBox1_Click);
+            this.bunifuPictureBox1.MouseLeave += new System.EventHandler(this.bunifuPictureBox1_MouseLeave);
+            this.bunifuPictureBox1.MouseHover += new System.EventHandler(this.bunifuPictureBox1_MouseHover);
+            // 
+            // lab_login_error
+            // 
+            this.lab_login_error.AutoSize = true;
+            this.lab_login_error.BackColor = System.Drawing.Color.Transparent;
+            this.lab_login_error.Font = new System.Drawing.Font("Ubuntu", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_login_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.lab_login_error.Location = new System.Drawing.Point(9, 468);
+            this.lab_login_error.Name = "lab_login_error";
+            this.lab_login_error.Size = new System.Drawing.Size(0, 26);
+            this.lab_login_error.TabIndex = 33;
+            // 
+            // lab_pass_err
+            // 
+            this.lab_pass_err.AutoSize = true;
+            this.lab_pass_err.BackColor = System.Drawing.Color.Transparent;
+            this.lab_pass_err.Font = new System.Drawing.Font("Ubuntu", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_pass_err.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.lab_pass_err.Location = new System.Drawing.Point(545, 435);
+            this.lab_pass_err.Name = "lab_pass_err";
+            this.lab_pass_err.Size = new System.Drawing.Size(0, 27);
+            this.lab_pass_err.TabIndex = 32;
+            // 
+            // lab_username_err
+            // 
+            this.lab_username_err.AutoSize = true;
+            this.lab_username_err.BackColor = System.Drawing.Color.Transparent;
+            this.lab_username_err.Font = new System.Drawing.Font("Ubuntu", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_username_err.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.lab_username_err.Location = new System.Drawing.Point(545, 329);
+            this.lab_username_err.Name = "lab_username_err";
+            this.lab_username_err.Size = new System.Drawing.Size(0, 27);
+            this.lab_username_err.TabIndex = 31;
+            // 
+            // backgroundWorkerLogin
+            // 
+            this.backgroundWorkerLogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerLogin_DoWork);
+            this.backgroundWorkerLogin.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerLogin_RunWorkerCompleted);
+            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // panelloadingCon
-            // 
-            this.panelloadingCon.Controls.Add(this.pictureBox3);
-            this.panelloadingCon.Location = new System.Drawing.Point(572, 175);
-            this.panelloadingCon.Name = "panelloadingCon";
-            this.panelloadingCon.Size = new System.Drawing.Size(270, 331);
-            this.panelloadingCon.TabIndex = 41;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::gym_management_system.Properties.Resources._154039234778Fitness_Center;
-            this.pictureBox3.Location = new System.Drawing.Point(-6, -31);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(290, 362);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
             // 
             // Login_form
             // 
@@ -528,16 +528,16 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter_Key);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.show_pass_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hide_pass_btn)).EndInit();
-            this.panellog.ResumeLayout(false);
-            this.panellog.PerformLayout();
+            this.panelloadingCon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelconnectionerrorpackage.ResumeLayout(false);
             this.panelconnectionerrorpackage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panelloadingCon.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panellog.ResumeLayout(false);
+            this.panellog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hide_pass_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.show_pass_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -81,7 +81,6 @@ namespace gym_management_system
                     ButtonEmployees.Visible = false;
                     ButtonTrainer.Visible = false;
                     ButtonPayments.Visible = false;
-                    ButtonSubscriptions.Visible = false;
                 }
                 if (employee.Picture != null)
                 {
