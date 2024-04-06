@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,13 +29,13 @@ namespace gym_management_system.Service
                 e.first_name AS employee_first_name,
                 e.second_name AS employee_second_name
             FROM 
-                payment p
+                [pulseup_gym_management_system].[payment] p
             JOIN 
-                member m ON p.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON p.memberID = m.id
             JOIN 
-                employee e ON p.employeeID = e.id";
+                [pulseup_gym_management_system].[employee] e ON p.employeeID = e.id";
 
-                using (MySqlDataReader reader = Global.sqlService.SqlSelect(query))
+                using (SqlDataReader reader = Global.sqlService.SqlSelect(query))
                 {
                     if (reader.HasRows)
                     {
@@ -76,7 +77,7 @@ namespace gym_management_system.Service
                     }
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting payments from MySQL: {ex.Message}");
                 return null;
@@ -86,8 +87,8 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"INSERT INTO payment (name, amount, date, memberID, employeeID) VALUES " +
-                               $"('{payment.Name}', {payment.Amount}, now(), " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[payment] (name, amount, date, memberID, employeeID) VALUES " +
+                               $"('{payment.Name}', {payment.Amount}, GETDATE(), " +
                                $"{payment.Member.Id}, {payment.Employee.Id})";
 
 
@@ -104,7 +105,7 @@ namespace gym_management_system.Service
                 }
 
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error inserting payment into database: {ex.Message}");
                 return false;
@@ -115,7 +116,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE payments SET";
+                string query = "UPDATE [pulseup_gym_management_system].[payment] SET";
                 if (name)
                 {
                     query += $" name = '{paymentModel.Name}',";
@@ -159,7 +160,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating payment attributes in MySql: {ex.Message}");
                 return false;

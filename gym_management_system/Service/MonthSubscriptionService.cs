@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,14 +34,14 @@ namespace gym_management_system.Service
                 mo.num_of_months,
                 mo.price
             FROM
-                month_subscription ms
+                [pulseup_gym_management_system].[month_subscription] ms
             JOIN
-                member m ON ms.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON ms.memberID = m.id
             JOIN
-                employee e ON ms.employeeID = e.id
+                [pulseup_gym_management_system].[employee] e ON ms.employeeID = e.id
             JOIN
-                month_offer mo ON ms.monthID = mo.id";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                [pulseup_gym_management_system].[month_offer] mo ON ms.monthID = mo.id";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -87,7 +88,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting month subscriptions from MySql: {ex.Message}");
                 return null;
@@ -100,16 +101,16 @@ namespace gym_management_system.Service
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
                 string query = $@"
                 SELECT COUNT(*) 
-                FROM month_subscription ms
-                INNER JOIN month_offer mo ON ms.monthID = mo.id
+                FROM [pulseup_gym_management_system].[month_subscription] ms
+                INNER JOIN [pulseup_gym_management_system].[month_offer] mo ON ms.monthID = mo.id
                 WHERE ms.memberID = {memberId}
-                AND ms.start_date <= NOW()
-                AND DATE_ADD(ms.start_date, INTERVAL mo.num_of_months MONTH) >= NOW()";
+                AND ms.start_date <= GETDATE()
+                AND DATEADD(MONTH, mo.num_of_months, ms.start_date) >= GETDATE()";
 
                 int count = Global.sqlService.sqlExecuteScalar(query);
                 return count > 0;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error checking member month subscription in MySql: {ex.Message}");
                 return false;
@@ -138,13 +139,13 @@ namespace gym_management_system.Service
                 mo.num_of_months,
                 mo.price
             FROM 
-                month_subscription ms
+                [pulseup_gym_management_system].[month_subscription] ms
             JOIN 
-                member m ON ms.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON ms.memberID = m.id
             JOIN 
-                employee e ON ms.employeeID = e.id
+                [pulseup_gym_management_system].[employee] e ON ms.employeeID = e.id
             JOIN 
-                month_offer mo ON ms.monthID = mo.id
+                [pulseup_gym_management_system].[month_offer] mo ON ms.monthID = mo.id
             WHERE ";
 
                 if (byId && int.TryParse(search, out int id))
@@ -161,7 +162,7 @@ namespace gym_management_system.Service
                     return null;
                 }
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -211,7 +212,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql month_subscription search: {ex.Message}");
                 return null;
@@ -222,9 +223,9 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $@"INSERT INTO month_subscription 
+                string query = $@"INSERT INTO [pulseup_gym_management_system].[month_subscription] 
                                 (num_of_attend, start_date, remain_freze_day, memberID, employeeID, monthID) VALUES 
-                                (0, now(), (SELECT max_num_freze FROM month_offer WHERE id = {monthOfferModel.Id}), {memberModel.Id}, {employeeModel.Id}, {monthOfferModel.Id})";
+                                (0, GETDATE(), (SELECT max_num_freze FROM [pulseup_gym_management_system].[month_offer] WHERE id = {monthOfferModel.Id}), {memberModel.Id}, {employeeModel.Id}, {monthOfferModel.Id})";
 
                 int rowsAffected = Global.sqlService.SqlNonQuery(query);
 
@@ -239,7 +240,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding month subscription in MySql: {ex.Message}");
                 return false;
@@ -250,9 +251,9 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $@"INSERT INTO month_subscription 
+                string query = $@"INSERT INTO [pulseup_gym_management_system].[month_subscription] 
                                 (num_of_attend, start_date, remain_freze_day, memberID, employeeID, monthID) VALUES 
-                                ({subscription.NumberOfAttend}, 'now()', {subscription.RemainFrezeDay}, {subscription.Member.Id}, {subscription.Employee.Id}, {subscription.MonthOffer.Id})";
+                                ({subscription.NumberOfAttend}, GETDATE(), {subscription.RemainFrezeDay}, {subscription.Member.Id}, {subscription.Employee.Id}, {subscription.MonthOffer.Id})";
 
                 int rowsAffected = Global.sqlService.SqlNonQuery(query);
 
@@ -267,7 +268,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding month subscription in MySql: {ex.Message}");
                 return false;

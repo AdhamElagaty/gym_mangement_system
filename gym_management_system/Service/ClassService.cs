@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +21,15 @@ namespace gym_management_system.Service
                 if (byId && int.TryParse(search, out int id))
                 {
                     query = $"SELECT c.*, t.first_name AS trainerFirstName, t.second_name AS trainerSecondName " +
-                            $"FROM class c " +
-                            $"INNER JOIN trainer t ON c.trainerID = t.id " +
+                            $"FROM [pulseup_gym_management_system].[class] c " +
+                            $"INNER JOIN [pulseup_gym_management_system].[trainer] t ON c.trainerID = t.id " +
                             $"WHERE c.id = {id}";
                 }
                 else if (byName)
                 {
                     query = $"SELECT c.*, t.first_name AS trainerFirstName, t.second_name AS trainerSecondName " +
-                            $"FROM class c " +
-                            $"INNER JOIN trainer t ON c.trainerID = t.id " +
+                            $"FROM [pulseup_gym_management_system].[class] c " +
+                            $"INNER JOIN [pulseup_gym_management_system].[trainer] t ON c.trainerID = t.id " +
                             $"WHERE c.name LIKE '%{search}%'";
                 }
 
@@ -38,7 +39,7 @@ namespace gym_management_system.Service
                     return null;
                 }
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -72,7 +73,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql Class search: {ex.Message}");
                 return null;
@@ -83,11 +84,11 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"SELECT COUNT(*) FROM class WHERE s1_day_name = '{dayName}' OR s2_day_name = '{dayName}'";
+                string query = $"SELECT COUNT(*) FROM [pulseup_gym_management_system].[class] WHERE s1_day_name = '{dayName}' OR s2_day_name = '{dayName}'";
                 int count = Global.sqlService.sqlExecuteScalar(query);
                 return count >= 3;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting number of classes per day in MySql: {ex.Message}");
                 return true;
@@ -109,10 +110,10 @@ namespace gym_management_system.Service
                     statusFilter = includeOnlyActive ? "WHERE c.status = '1' AND t.status = '1'" : "";
                 }
 
-                string query = $"SELECT c.*, t.* FROM class c " +
-                               $"LEFT JOIN trainer t ON c.trainerID = t.id {statusFilter}";
+                string query = $"SELECT c.*, t.* FROM [pulseup_gym_management_system].[class] c " +
+                               $"LEFT JOIN [pulseup_gym_management_system].[trainer] t ON c.trainerID = t.id {statusFilter}";
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -128,10 +129,8 @@ namespace gym_management_system.Service
                         bool status = Convert.ToBoolean(reader["status"]);
                         int trainerID = Convert.ToInt32(reader["trainerID"]);
 
-                        // Check if trainer status is 1
                         if (Convert.ToBoolean(reader["status"]))
                         {
-                            // Read TrainerModel properties
                             string firstName = reader["first_name"].ToString();
                             string secondName = reader["second_name"].ToString();
                             string gender = reader["gender"].ToString();
@@ -155,7 +154,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql GetAllClasses: {ex.Message}");
                 return null;
@@ -169,7 +168,7 @@ namespace gym_management_system.Service
                 List<ClassModel> classModels = new List<ClassModel>();
                 string statusFilter;
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
-                string dateFilter = $"AND DATE_ADD(start_date, INTERVAL 1 MONTH) >= '{currentDate}'";
+                string dateFilter = $"AND DATEADD(MONTH, 1, cs.start_date) >= '{currentDate}'";
 
                 if (onlyAvailable)
                 {
@@ -181,12 +180,12 @@ namespace gym_management_system.Service
                 }
 
                 string query = $"SELECT c.*, t.*, cs.memberID, cs.start_date " +
-                               $"FROM class c " +
-                               $"LEFT JOIN trainer t ON c.trainerID = t.id " +
-                               $"LEFT JOIN class_subscription cs ON c.id = cs.classID AND cs.memberID = {memberId} {dateFilter} " +
+                               $"FROM [pulseup_gym_management_system].[class] c " +
+                               $"LEFT JOIN [pulseup_gym_management_system].[trainer] t ON c.trainerID = t.id " +
+                               $"LEFT JOIN [pulseup_gym_management_system].[class_subscription] cs ON c.id = cs.classID AND cs.memberID = {memberId} {dateFilter} " +
                                $"{statusFilter}";
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -202,12 +201,10 @@ namespace gym_management_system.Service
                         bool status = Convert.ToBoolean(reader["status"]);
                         int trainerID = Convert.ToInt32(reader["trainerID"]);
 
-                        // Check if class is not subscribed by the member
                         int classMemberID = reader["memberID"] == DBNull.Value ? 0 : Convert.ToInt32(reader["memberID"]);
 
                         if (classMemberID == 0)
                         {
-                            // Read TrainerModel properties
                             string firstName = reader["first_name"].ToString();
                             string secondName = reader["second_name"].ToString();
                             string gender = reader["gender"].ToString();
@@ -231,7 +228,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql GetUnsubscribedClasses: {ex.Message}");
                 return null;
@@ -243,7 +240,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE class SET";
+                string query = "UPDATE [pulseup_gym_management_system].[class] SET";
 
                 if (name)
                 {
@@ -278,7 +275,7 @@ namespace gym_management_system.Service
                     query += $" trainerID = {classModel.TrainerModel.Id},";
                 }
 
-                if (query == $"UPDATE class SET")
+                if (query == $"UPDATE [pulseup_gym_management_system].[class] SET")
                 {
                     Console.WriteLine($"Error updating class attributes: No selected data modified");
                     return false;
@@ -300,7 +297,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating class attributes in MySql: {ex.Message}");
                 return false;
@@ -311,7 +308,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"INSERT INTO class (name, enrollment_num, max_enrollment_num, price, s1_day_name, s2_day_name, trainerID, status) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[class] (name, enrollment_num, max_enrollment_num, price, s1_day_name, s2_day_name, trainerID, status) VALUES " +
                                $"('{classModel.Name}', '{classModel.EnrollmentNumber}', '{classModel.MaxEnrollmentNumber}', " +
                                $"'{classModel.Price}', '{classModel.SessionOneDayName}', '{classModel.SessionTwoDayName}', '{classModel.TrainerModel.Id}', '{classModel.Status}')";
 
@@ -327,7 +324,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding class in MySql: {ex.Message}");
                 return false;

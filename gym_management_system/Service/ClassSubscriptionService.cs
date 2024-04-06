@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,14 +31,14 @@ namespace gym_management_system.Service
                          c.id AS class_id,
                          c.name
                      FROM 
-                         class_subscription cs
+                         [pulseup_gym_management_system].[class_subscription] cs
                      JOIN 
-                         member m ON cs.memberID = m.id
+                         [pulseup_gym_management_system].[member] m ON cs.memberID = m.id
                      JOIN 
-                         employee e ON cs.employeeID = e.id
+                         [pulseup_gym_management_system].[employee] e ON cs.employeeID = e.id
                      JOIN 
-                         class c ON cs.classID = c.id";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                         [pulseup_gym_management_system].[class] c ON cs.classID = c.id";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -81,7 +82,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting class subscriptions from MySql: {ex.Message}");
                 return null;
@@ -92,9 +93,9 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $@"INSERT INTO class_subscription 
+                string query = $@"INSERT INTO [pulseup_gym_management_system].[class_subscription] 
                 (start_date, num_of_attend, memberID, employeeID, classID) VALUES 
-                (NOW(), 0, {memberModel.Id}, 
+                (GETDATE(), 0, {memberModel.Id}, 
                 {employeeModel.Id}, {classModel.Id})";
 
                 int rowsAffected = Global.sqlService.SqlNonQuery(query);
@@ -110,7 +111,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding class subscription in MySql: {ex.Message}");
                 return false;
@@ -124,17 +125,17 @@ namespace gym_management_system.Service
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
                 string query = $@"
                 SELECT COUNT(*) 
-                FROM class_subscription cs
-                INNER JOIN class c ON cs.classID = c.id
+                FROM [pulseup_gym_management_system].[class_subscription] cs
+                INNER JOIN [pulseup_gym_management_system].[class] c ON cs.classID = c.id
                 WHERE cs.memberID = {memberId}
                 AND cs.classID = {classId}
-                AND cs.start_date <= NOW()
-                AND DATE_ADD(cs.start_date, INTERVAL 1 Month) >= NOW()";
+                AND cs.start_date <= GETDATE()
+                AND DATEADD(MONTH, 1, cs.start_date) >= GETDATE()";
 
                 int count = Global.sqlService.sqlExecuteScalar(query);
                 return count > 0;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error checking member class subscription in MySql: {ex.Message}");
                 return false;
@@ -145,7 +146,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE class SET";
+                string query = "UPDATE [pulseup_gym_management_system].[class_subscription] SET";
                 if (numOfAttend)
                 {
                     query += $" num_of_attend = {classModel.NumberOfAttend},";
@@ -159,7 +160,7 @@ namespace gym_management_system.Service
                     query += $" end_date = '{classModel.EndDate.ToString("yyyy-MM-dd HH:mm:ss")}',";
                 }
 
-                if (query == "UPDATE class SET")
+                if (query == "UPDATE [pulseup_gym_management_system].[class_subscription] SET")
                 {
                     Console.WriteLine($"Error updating class attributes: No selected data modified");
                     return false;
@@ -180,7 +181,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating class attributes in MySql: {ex.Message}");
                 return false;
@@ -203,11 +204,11 @@ namespace gym_management_system.Service
                 e.first_name AS employee_first_name,
                 e.second_name AS employee_second_name
             FROM 
-                class_subscription cs
+                [pulseup_gym_management_system].[class_subscription] cs
             JOIN 
-                member m ON cs.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON cs.memberID = m.id
             JOIN 
-                employee e ON cs.employeeID = e.id
+                [pulseup_gym_management_system].[employee] e ON cs.employeeID = e.id
             WHERE ";
 
                 if (byId && int.TryParse(search, out int id))
@@ -224,7 +225,7 @@ namespace gym_management_system.Service
                     return null;
                 }
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -262,7 +263,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql class_subscription search: {ex.Message}");
                 return null;
@@ -272,7 +273,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"INSERT INTO class_subscription ( start_date, num_of_attend, memberID, employeeID, classID) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[class_subscription] ( start_date, num_of_attend, memberID, employeeID, classID) VALUES " +
                                $"(' '{classSubscriptionModel.StartDate.ToString("yyyy-MM-dd")}', " +
                                $"'{classSubscriptionModel.NumberOfAttend}', '{classSubscriptionModel.Member.Id}', " +
                                $"'{classSubscriptionModel.Employee.Id}', '{classSubscriptionModel.ClassModel.Id}')";
@@ -289,7 +290,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding class subscription in MySql: {ex.Message}");
                 return false;

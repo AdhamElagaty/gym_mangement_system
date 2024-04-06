@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace gym_management_system.Service
 {
     public class PackgeService
     {
-        public List<PackgeModel> Search(string search,bool getMonthOfferData = false, bool byId = false, bool byName = false)
+        public List<PackgeModel> Search(string search, bool getMonthOfferData = false, bool byId = false, bool byName = false)
         {
             try
             {
@@ -20,11 +21,11 @@ namespace gym_management_system.Service
                 {
                     if (byId && int.TryParse(search, out int id))
                     {
-                        query = $"SELECT p.*, mo.* FROM packge p INNER JOIN month_offer mo ON p.month_offerID = mo.id WHERE p.id = {id}";
+                        query = $"SELECT p.*, mo.* FROM [pulseup_gym_management_system].[packge] p INNER JOIN month_offer mo ON p.month_offerID = mo.id WHERE p.id = {id}";
                     }
                     else if (byName)
                     {
-                        query = $"SELECT p.*, mo.* FROM packge p INNER JOIN month_offer mo ON p.month_offerID = mo.id WHERE p.name LIKE '%{search}%'";
+                        query = $"SELECT p.*, mo.* FROM [pulseup_gym_management_system].[packge] p INNER JOIN month_offer mo ON p.month_offerID = mo.id WHERE p.name LIKE '%{search}%'";
                     }
 
                     if (query == "")
@@ -37,11 +38,11 @@ namespace gym_management_system.Service
                 {
                     if (byId && int.TryParse(search, out int id))
                     {
-                        query = $"SELECT * FROM packge WHERE id = {id}";
+                        query = $"SELECT * FROM [pulseup_gym_management_system].[packge] WHERE id = {id}";
                     }
                     else if (byName)
                     {
-                        query = $"SELECT * FROM packge WHERE name = '{search}'";
+                        query = $"SELECT * FROM [pulseup_gym_management_system].[packge] WHERE name = '{search}'";
                     }
 
                     if (query == "")
@@ -51,7 +52,7 @@ namespace gym_management_system.Service
                     }
                 }
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -102,7 +103,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql Packge search: {ex.Message}");
                 return null;
@@ -115,9 +116,9 @@ namespace gym_management_system.Service
             {
                 List<PackgeModel> packgeModels = new List<PackgeModel>();
                 string statusFilter = includeOnlyActive ? "WHERE p.status = '1'" : "";
-                string query = $"SELECT p.*, m.* FROM packge p " +
-                               $"LEFT JOIN month_offer m ON p.month_offerID = m.id {statusFilter}";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                string query = $"SELECT p.*, m.* FROM [pulseup_gym_management_system].[packge] p " +
+                               $"LEFT JOIN [pulseup_gym_management_system].[month_offer] m ON p.month_offerID = m.id {statusFilter}";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -150,7 +151,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql GetAllPackages: {ex.Message}");
                 return null;
@@ -161,7 +162,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE packge SET";
+                string query = "UPDATE [pulseup_gym_management_system].[packge] SET";
                 if (name)
                 {
                     query += $" name = '{packageModel.Name}',";
@@ -209,7 +210,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating package attributes in MySql: {ex.Message}");
                 return false;
@@ -219,7 +220,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"INSERT INTO packge (name, month_offerID, num_of_classes, num_of_invatation, discount_percentage, status) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[packge] (name, month_offerID, num_of_classes, num_of_invatation, discount_percentage, status) VALUES " +
                                $"('{packageModel.Name}', '{packageModel.MonthOffer.Id}', '{packageModel.NumOfClass}', " +
                                $"'{packageModel.NumOfInvatation}', '{packageModel.DiscountPercentage}', '{packageModel.Status}')";
 
@@ -235,7 +236,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding package in MySql: {ex.Message}");
                 return false;

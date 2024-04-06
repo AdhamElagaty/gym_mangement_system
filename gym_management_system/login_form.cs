@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
@@ -238,7 +239,7 @@ namespace gym_management_system
         {
             try
             {
-                MySqlConnection con = Global.sqlService.connection;
+                SqlConnection con = Global.sqlService.connection;
                 con.Open();
                 conState = true;
             }

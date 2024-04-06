@@ -250,3 +250,5 @@ D:\Programing\Project\Gym Mangmet System\gym_mangement_system\gym_management_sys
 D:\Programing\Project\Gym Mangmet System\gym_mangement_system\gym_management_system\obj\Debug\gym_management_system.Subscription.resources
 D:\Programing\Project\Gym Mangmet System\gym_mangement_system\gym_management_system\obj\Debug\gym_management_system.Trainer.resources
 D:\Programing\Project\Gym Mangmet System\gym_mangement_system\gym_management_system\obj\Debug\gym_mana.95E4EB2D.Up2Date
+D:\Programing\Project\Gym Mangmet System\gym_mangement_system\gym_management_system\bin\Debug\bin\Debug\pulseup_gym_management_system.mdf
+D:\Programing\Project\Gym Mangmet System\gym_mangement_system\gym_management_system\bin\Debug\bin\Debug\pulseup_gym_management_system_log.ldf

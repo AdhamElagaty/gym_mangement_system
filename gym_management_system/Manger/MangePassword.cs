@@ -10,7 +10,7 @@ namespace gym_management_system.Manger
     {
         public string encrypt_password(string password, int id)
         {
-            int key = id % 1000000;
+            int key = id % 100;
             char[] pass = password.ToCharArray();
 
             for (int i = 0; i < password.Length; ++i)
@@ -23,7 +23,7 @@ namespace gym_management_system.Manger
 
         public string decrypt_password(string password, int id)
         {
-            int key = id % 1000000;
+            int key = id % 100;
             char[] pass = password.ToCharArray();
 
             for (int i = 0; i < password.Length; ++i)

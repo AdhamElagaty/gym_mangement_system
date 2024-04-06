@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,22 +19,22 @@ namespace gym_management_system.Service
                 string query = "";
                 if (byId && int.TryParse(search, out int id))
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM member WHERE id = {id}";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[member] WHERE id = {id}";
                 }
                 else if (byFName || bySName)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM member WHERE first_name = '{search}' OR second_name = '{search}'";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[member] WHERE first_name = '{search}' OR second_name = '{search}'";
                 }
                 else if (byFulName)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM member WHERE CONCAT(first_name , ' ' , second_name) = '{search}'";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[member] WHERE CONCAT(first_name , ' ' , second_name) = '{search}'";
                 }
                 if (query == "")
                 {
                     Console.WriteLine($"Error getting from Member search: No selected search tybe");
                     return null;
                 }
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -56,7 +57,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql Member search: {ex.Message}");
                 return null;
@@ -67,8 +68,8 @@ namespace gym_management_system.Service
             try
             {
                 List<MemberModel> memberModels = new List<MemberModel>();
-                string query = $"SELECT {GetSelectColumns(includePicture)} FROM member";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                string query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[member]";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -89,7 +90,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql getAllEmployee: {ex.Message}");
                 return null;
@@ -102,7 +103,7 @@ namespace gym_management_system.Service
             {
                 int id = memberModel.generateId();
                 memberModel.Password = memberModel.Id.ToString();
-                string query = $"INSERT INTO member (id, first_name, second_name, password, brithday, gender, picture, email, phone_number, attendance_count) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[member] (id, first_name, second_name, password, brithday, gender, picture, email, phone_number, attendance_count) VALUES " +
                                $"('{id}', '{memberModel.FirstName}', '{memberModel.SecondName}', '{Global.mangePassword.encrypt_password(memberModel.Password, id)}', '{memberModel.Brithday.ToString("yyyy-MM-dd")}', " +
                                $"'{memberModel.Gender}', '{memberModel.Base64Image}', " +
                                $"'{memberModel.Email}', '{memberModel.PhoneNumber}', {memberModel.AttendanceCount})";
@@ -119,7 +120,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error add Member in MySql: {ex.Message}");
                 return null;
@@ -130,7 +131,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE member SET";
+                string query = "UPDATE [pulseup_gym_management_system].[member] SET";
                 if (firstName)
                 {
                     query += $" first_name = '{memberModel.FirstName}',";
@@ -163,7 +164,7 @@ namespace gym_management_system.Service
                 {
                     query += $"attendance_count = {memberModel.AttendanceCount},";
                 }
-                if (query == $"UPDATE member SET")
+                if (query == $"UPDATE [pulseup_gym_management_system].[member] SET")
                 {
                     Console.WriteLine($"Error updating member status attributes: No selected data modfied");
                     return false;
@@ -183,7 +184,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating member attributes in MySql: {ex.Message}");
                 return false;
@@ -195,8 +196,8 @@ namespace gym_management_system.Service
             try
             {
                 int id = 0;
-                string query = "SELECT id FROM member ORDER BY id DESC LIMIT 1";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                string query = "SELECT TOP 1 id FROM [pulseup_gym_management_system].[member] ORDER BY id DESC";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
                 if (reader.HasRows)
                 {
                     reader.Read();
@@ -209,7 +210,7 @@ namespace gym_management_system.Service
                     return id;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql getLastId of member: {ex.Message}");
                 return -1;

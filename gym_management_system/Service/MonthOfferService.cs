@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,11 @@ namespace gym_management_system.Service
 
                 if (byId && int.TryParse(search, out int id))
                 {
-                    query = $"SELECT * FROM month_offer WHERE id = {id}";
+                    query = $"SELECT * FROM [pulseup_gym_management_system].[month_offer] WHERE id = {id}";
                 }
                 else if (byNumOfMonth && int.TryParse(search, out int numOfMonth))
                 {
-                    query = $"SELECT * FROM month_offer WHERE num_of_months = {numOfMonth}";
+                    query = $"SELECT * FROM [pulseup_gym_management_system].[month_offer] WHERE num_of_months = {numOfMonth}";
                 }
 
                 if (query == "")
@@ -32,7 +33,7 @@ namespace gym_management_system.Service
                     Console.WriteLine($"Error getting from MonthOffer search: No selected search type");
                     return null;
                 }
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -56,7 +57,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql MonthOffer search: {ex.Message}");
                 return null;
@@ -68,7 +69,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"INSERT INTO month_offer (max_num_freze, num_of_months, price) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[month_offer] (max_num_freze, num_of_months, price) VALUES " +
                                $"({monthOffer.MaxNumFreze}, {monthOffer.NumOfMonth}, {monthOffer.Price})";
 
                 int rowsAffected = Global.sqlService.SqlNonQuery(query);
@@ -83,7 +84,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding MonthOffer in MySql: {ex.Message}");
                 return false;
@@ -96,7 +97,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE month_offer SET";
+                string query = "UPDATE [pulseup_gym_management_system].[month_offer] SET";
 
                 if (maxNumFreze)
                 {
@@ -133,7 +134,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating month offer attributes in MySql: {ex.Message}");
                 return false;
@@ -147,9 +148,9 @@ namespace gym_management_system.Service
             try
             {
                 List<MonthOfferModel> monthOffers = new List<MonthOfferModel>();
-                string query = "SELECT * FROM month_offer";
+                string query = "SELECT * FROM [pulseup_gym_management_system].[month_offer]";
 
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -175,7 +176,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting all month offers from MySql: {ex.Message}");
                 return null;

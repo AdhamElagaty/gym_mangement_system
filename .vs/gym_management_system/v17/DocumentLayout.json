@@ -3,16 +3,76 @@
   "WorkspaceRootPath": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\manger\\mangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\manger\\mangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\loading_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\loading_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\trainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\trainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\sqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\sqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\add_package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\add_package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\privatesubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\privatesubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\packgesupscribtionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\packgesupscribtionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\packgeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\packgeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\monthsubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\monthsubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\monthofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\monthofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\classsubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\classsubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|d:\\programing\\project\\gym mangmet system\\gym_mangement_system\\gym_management_system\\service\\classservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\classservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\annoucementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\annoucementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\add_package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\add_package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,24 +95,12 @@
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\annoucementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\annoucementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\employees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\trainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\trainerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\models\\trainermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\models\\trainermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\monthofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\monthofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,10 +115,6 @@
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\models\\monthoffermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -83,16 +127,8 @@
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\loading_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\loading_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\loading_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\packgesupscribtionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\packgesupscribtionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -115,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\memberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\models\\membermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\models\\membermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -129,10 +161,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\service\\classsubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|solutionrelative:gym_management_system\\service\\classsubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5089E552-0F3F-4ED0-AAEF-0B190D4C527B}|gym_management_system\\gym_management_system.csproj|D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -166,11 +194,206 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MangePassword.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Manger\\MangePassword.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Manger\\MangePassword.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Manger\\MangePassword.cs",
+              "RelativeToolTip": "gym_management_system\\Manger\\MangePassword.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:31:10.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrivateSubscriptionService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PrivateSubscriptionService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\PrivateSubscriptionService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PrivateSubscriptionService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\PrivateSubscriptionService.cs",
+              "ViewState": "AQIAAIABAAAAAAAAAADwv50BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:29:04.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PackgeService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PackgeService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\PackgeService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PackgeService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\PackgeService.cs",
+              "ViewState": "AQIAANkAAAAAAAAAAADwv/YAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:28:27.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PackgeSupscribtionService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PackgeSupscribtionService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\PackgeSupscribtionService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PackgeSupscribtionService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\PackgeSupscribtionService.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAADwv8MAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SqlService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\SqlService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\SqlService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\SqlService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\SqlService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwBUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:17:27.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TrainerService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\TrainerService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\TrainerService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\TrainerService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\TrainerService.cs",
+              "ViewState": "AQIAANwAAAAAAAAAAADwv/kAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "login_form.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\login_form.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs",
+              "RelativeToolTip": "gym_management_system\\login_form.cs",
+              "ViewState": "AQIAAOIAAAAAAAAAAAAiwPEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Loading_Form.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Loading_Form.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Loading_Form.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Loading_Form.cs",
+              "RelativeToolTip": "gym_management_system\\Loading_Form.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAqwBwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MonthSubscriptionService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MonthSubscriptionService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\MonthSubscriptionService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MonthSubscriptionService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\MonthSubscriptionService.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAswBcBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:27:44.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MemberService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MemberService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\MemberService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MemberService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\MemberService.cs",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAowFIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\EmailService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\EmailService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\EmailService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\EmailService.cs",
+              "ViewState": "AQIAAIkAAAAAAAAAAADwv6YAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:25:15.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ClassService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\ClassService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\ClassService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\ClassService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\ClassService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:22:13.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PaymentService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\PaymentService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PaymentService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\PaymentService.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAADwv6oAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T00:18:22.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\EmployeeService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\EmployeeService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\EmployeeService.cs",
+              "ViewState": "AQIAACgBAAAAAAAAAADwv0UBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MonthOfferService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MonthOfferService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\MonthOfferService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MonthOfferService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\MonthOfferService.cs",
+              "ViewState": "AQIAAJ4AAAAAAAAAAADwv7sAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Add_Package.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Add_Package.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Add_Package.cs",
@@ -182,43 +405,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Program.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Program.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Program.cs",
-              "RelativeToolTip": "gym_management_system\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "DocumentIndex": 20,
+              "Title": "Add_Person.cs [Design]",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Add_Person.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Add_Person.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Add_Person.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Add_Person.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmployeeService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\EmployeeService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\EmployeeService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\EmployeeService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\EmployeeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUBAAAJAAAA",
+              "DocumentIndex": 14,
+              "Title": "ClassSubscriptionService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\ClassSubscriptionService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\ClassSubscriptionService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\ClassSubscriptionService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\ClassSubscriptionService.cs",
+              "ViewState": "AQIAABcBAAAAAAAAAAAAACwBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Home.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Home.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Home.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Home.cs",
-              "RelativeToolTip": "gym_management_system\\Home.cs",
-              "ViewState": "AQIAAMsBAAAAAAAAAAAYwM4BAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 21,
               "Title": "subscribe.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\subscribe.cs",
               "RelativeDocumentMoniker": "gym_management_system\\subscribe.cs",
@@ -226,22 +438,51 @@
               "RelativeToolTip": "gym_management_system\\subscribe.cs",
               "ViewState": "AQIAACIAAAAAAAAAAAAQwDMBAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.76Z"
+              "WhenOpened": "2023-12-30T19:03:11.76Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Add_Person.cs [Design]",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Add_Person.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Add_Person.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Add_Person.cs [Design]",
-              "RelativeToolTip": "gym_management_system\\Add_Person.cs [Design]",
+              "DocumentIndex": 25,
+              "Title": "Home.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Home.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Home.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Home.cs",
+              "RelativeToolTip": "gym_management_system\\Home.cs",
+              "ViewState": "AQIAAMsBAAAAAAAAAAAYwM4BAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
+              "Title": "AnnoucementService.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\AnnoucementService.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Service\\AnnoucementService.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\AnnoucementService.cs",
+              "RelativeToolTip": "gym_management_system\\Service\\AnnoucementService.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAADwv5QAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Program.cs",
+              "RelativeDocumentMoniker": "gym_management_system\\Program.cs",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Program.cs",
+              "RelativeToolTip": "gym_management_system\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "TrainerModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\TrainerModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\TrainerModel.cs",
@@ -249,24 +490,12 @@
               "RelativeToolTip": "gym_management_system\\Models\\TrainerModel.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAAABgAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SqlService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\SqlService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\SqlService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\SqlService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\SqlService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAowC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "Employees.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Employees.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Employees.cs",
@@ -274,34 +503,24 @@
               "RelativeToolTip": "gym_management_system\\Employees.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AnnoucementService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\AnnoucementService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\AnnoucementService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\AnnoucementService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\AnnoucementService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 23,
               "Title": "Employees.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Employees.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Employees.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Employees.cs [Design]",
               "RelativeToolTip": "gym_management_system\\Employees.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 27,
               "Title": "MonthOfferModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\MonthOfferModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\MonthOfferModel.cs",
@@ -309,115 +528,73 @@
               "RelativeToolTip": "gym_management_system\\Models\\MonthOfferModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "login_form.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs",
               "RelativeDocumentMoniker": "gym_management_system\\login_form.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs [Design]",
               "RelativeToolTip": "gym_management_system\\login_form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 26,
               "Title": "Home.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Home.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Home.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Home.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Home.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TrainerService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\TrainerService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\TrainerService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\TrainerService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\TrainerService.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAAEAAAAAIAAAA",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Home.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Home.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.735Z"
+              "WhenOpened": "2023-12-30T19:03:11.735Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "Main_Form.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Main_Form.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Main_Form.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Main_Form.cs",
               "RelativeToolTip": "gym_management_system\\Main_Form.cs",
               "ViewState": "AQIAAD4AAAAAAAAAAAAgwE0AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "login_form.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\login_form.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\login_form.cs",
-              "RelativeToolTip": "gym_management_system\\login_form.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAO0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "WhenOpened": "2023-12-30T19:03:11.744Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MonthOfferService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MonthOfferService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\MonthOfferService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MonthOfferService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\MonthOfferService.cs",
-              "ViewState": "AQIAAH0AAAAAAAAAAAAgwJAAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 28,
               "Title": "Main_Form.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Main_Form.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Main_Form.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Main_Form.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Main_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Main_Form.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Main_Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "Loading_Form.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Loading_Form.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Loading_Form.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Loading_Form.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Loading_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Loading_Form.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Loading_Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Loading_Form.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Loading_Form.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Loading_Form.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Loading_Form.cs",
-              "RelativeToolTip": "gym_management_system\\Loading_Form.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAqwCQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 31,
               "Title": "Global.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Global.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Global.cs",
@@ -425,92 +602,74 @@
               "RelativeToolTip": "gym_management_system\\Global.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "Members.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Members.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Members.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Members.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Members.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PackgeSupscribtionService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PackgeSupscribtionService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\PackgeSupscribtionService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\PackgeSupscribtionService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\PackgeSupscribtionService.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAQwCgAAAAwAAAA",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Members.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Members.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "subscribe.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\subscribe.cs",
               "RelativeDocumentMoniker": "gym_management_system\\subscribe.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\subscribe.cs [Design]",
               "RelativeToolTip": "gym_management_system\\subscribe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "Trainer.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Trainer.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Trainer.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Trainer.cs",
               "RelativeToolTip": "gym_management_system\\Trainer.cs",
               "ViewState": "AQIAAJgAAAAAAAAAAAA8wKYAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "Trainer.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Trainer.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Trainer.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Trainer.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Trainer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "MemberService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MemberService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\MemberService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\MemberService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\MemberService.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAYwGkAAACkAAAA",
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Trainer.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Trainer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "Members.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Members.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Members.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Members.cs",
               "RelativeToolTip": "gym_management_system\\Members.cs",
               "ViewState": "AQIAAIUAAAAAAAAAAAAqwJkAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "MemberModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\MemberModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\MemberModel.cs",
@@ -518,11 +677,12 @@
               "RelativeToolTip": "gym_management_system\\Models\\MemberModel.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.746Z"
+              "WhenOpened": "2023-12-30T19:03:11.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "PersonModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\PersonModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\PersonModel.cs",
@@ -530,23 +690,12 @@
               "RelativeToolTip": "gym_management_system\\Models\\PersonModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "ClassSubscriptionService.cs",
-              "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\ClassSubscriptionService.cs",
-              "RelativeDocumentMoniker": "gym_management_system\\Service\\ClassSubscriptionService.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Service\\ClassSubscriptionService.cs",
-              "RelativeToolTip": "gym_management_system\\Service\\ClassSubscriptionService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 39,
               "Title": "EmployeeModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\EmployeeModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\EmployeeModel.cs",
@@ -554,34 +703,37 @@
               "RelativeToolTip": "gym_management_system\\Models\\EmployeeModel.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwBUAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "Subscription.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Subscription.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Subscription.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Subscription.cs",
               "RelativeToolTip": "gym_management_system\\Subscription.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAAwC0AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "Subscription.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Subscription.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Subscription.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Subscription.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Subscription.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Subscription.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Subscription.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "PrivateSubscriptionModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\PrivateSubscriptionModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\PrivateSubscriptionModel.cs",
@@ -589,11 +741,12 @@
               "RelativeToolTip": "gym_management_system\\Models\\PrivateSubscriptionModel.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwBgAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "ClassSubscriptionModel.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Models\\ClassSubscriptionModel.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Models\\ClassSubscriptionModel.cs",
@@ -601,30 +754,33 @@
               "RelativeToolTip": "gym_management_system\\Models\\ClassSubscriptionModel.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-30T19:03:11.756Z"
+              "WhenOpened": "2023-12-30T19:03:11.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "Payments.cs [Design]",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Payments.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Payments.cs",
-              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Payments.cs [Design]",
-              "RelativeToolTip": "..\\New folder (2)\\New folder\\gym_mangement_system\\gym_management_system\\Payments.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.76Z"
+              "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Payments.cs [Design]",
+              "RelativeToolTip": "gym_management_system\\Payments.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.76Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "Payments.cs",
               "DocumentMoniker": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Payments.cs",
               "RelativeDocumentMoniker": "gym_management_system\\Payments.cs",
               "ToolTip": "D:\\Programing\\Project\\Gym Mangmet System\\gym_mangement_system\\gym_management_system\\Payments.cs",
               "RelativeToolTip": "gym_management_system\\Payments.cs",
               "ViewState": "AQIAAD4AAAAAAAAAAAAlwCcAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2023-12-30T19:03:11.76Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-30T19:03:11.76Z",
+              "EditorCaption": ""
             }
           ]
         }

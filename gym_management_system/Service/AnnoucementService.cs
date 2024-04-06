@@ -1,10 +1,7 @@
 ﻿using gym_management_system.Models;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace gym_management_system.Service
 {
@@ -15,8 +12,8 @@ namespace gym_management_system.Service
             try
             {
                 List<AnnoucementModl> announcements = new List<AnnoucementModl>();
-                string query = $"SELECT {GetSelectColumns(includePicture)} FROM announcement";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                string query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[announcement]";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -28,12 +25,12 @@ namespace gym_management_system.Service
                             date: Convert.ToDateTime(reader["date"]),
                             base64Image: reader["image"].ToString(),
                             picture: Global.mangeImage.ConvertBase64ToImage(reader["image"].ToString()),
-                            employeeModel: new EmployeeModel(id: Convert.ToInt32(reader["id"]))
+                            employeeModel: new EmployeeModel(id: Convert.ToInt32(reader["employeeID"]))
                         );
 
                         if (includePicture)
                         {
-                            announcement.Picture = Global.mangeImage.ConvertBase64ToImage(reader["picture"].ToString());
+                            announcement.Picture = Global.mangeImage.ConvertBase64ToImage(reader["image"].ToString());
                         }
 
                         announcements.Add(announcement);
@@ -47,18 +44,18 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine($"Error getting from MySql GetAllAnnouncements: {ex.Message}");
+                Console.WriteLine($"Error getting from SQL Server GetAllAnnouncements: {ex.Message}");
                 return null;
             }
         }
+
         public bool AddAnnouncement(AnnoucementModl announcementModel)
         {
             try
             {
-
-                string query = $"INSERT INTO announcement (title, content, date, image, employeeID) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[announcement] (title, content, date, image, employeeID) VALUES " +
                                $"( '{announcementModel.Title}', '{announcementModel.Content}', '{announcementModel.Date.ToString("yyyy-MM-dd")}', " +
                                $"'{announcementModel.Base64Image}', '{announcementModel.EmployeeModel?.Id}')";
 
@@ -74,17 +71,18 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine($"Error adding Announcement in MySql: {ex.Message}");
+                Console.WriteLine($"Error adding Announcement in SQL Server: {ex.Message}");
                 return false;
             }
         }
+
         public bool UpdateAnnouncementAttributes(AnnoucementModl announcementModel, bool title = false, bool content = false, bool date = false, bool image = false, bool employeeId = false)
         {
             try
             {
-                string query = "UPDATE annoucement SET";
+                string query = "UPDATE [pulseup_gym_management_system].[announcement] SET";
                 if (title)
                 {
                     query += $" title = '{announcementModel.Title}',";
@@ -106,7 +104,7 @@ namespace gym_management_system.Service
                     query += $" employeeID = '{announcementModel.EmployeeModel.Id}',";
                 }
 
-                if (query == "UPDATE annoucement SET")
+                if (query == "UPDATE [pulseup_gym_management_system].[announcement] SET")
                 {
                     Console.WriteLine($"Error updating announcement attributes: No selected data modified");
                     return false;
@@ -128,12 +126,13 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine($"Error updating announcement attributes in MySql: {ex.Message}");
+                Console.WriteLine($"Error updating announcement attributes in SQL Server: {ex.Message}");
                 return false;
             }
         }
+
         private string GetSelectColumns(bool includePicture)
         {
             if (includePicture)
@@ -144,6 +143,6 @@ namespace gym_management_system.Service
             {
                 return "id, title, content, date, employeeID";
             }
-        } 
+        }
     }
 }

@@ -10,12 +10,13 @@ using System.Drawing;
 using System.IO;
 using gym_management_system.Models;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace gym_management_system.Service
 {
     public class EmailService
     {
-        public bool sendEmail(EmailModel emailModel, Image image = null) 
+        public bool sendEmail(EmailModel emailModel, Image image = null)
         {
             string senderEmail = "pulseupgym@gmail.com";
             string senderPassword = "gpmr vcnt czsm rtva";
@@ -31,7 +32,7 @@ namespace gym_management_system.Service
                 {
                     mailMessage.Subject = emailModel.Subject;
                     mailMessage.Body = emailModel.Body;
-                    if(image != null)
+                    if (image != null)
                     {
                         ImageConverter converter = new ImageConverter();
                         byte[] imageBytes = (byte[])converter.ConvertTo(image, typeof(byte[]));
@@ -59,8 +60,8 @@ namespace gym_management_system.Service
             {
                 if (sendEmail(memberEmailModel, image))
                 {
-                    string query = $"INSERT INTO member_email (subject, date, memberID, employeeID) VALUES " +
-                               $"('{memberEmailModel.Subject}', now(), " +
+                    string query = $"INSERT INTO [pulseup_gym_management_system].[member_email] (subject, date, memberID, employeeID) VALUES " +
+                               $"('{memberEmailModel.Subject}', GETDATE(), " +
                                $"{memberEmailModel.MemberModel.Id}, {memberEmailModel.EmployeeModel.Id})";
 
                     int rowsAffected = Global.sqlService.SqlNonQuery(query);
@@ -81,9 +82,9 @@ namespace gym_management_system.Service
                     Console.WriteLine("Error in send member email");
                     return false;
                 }
-                
+
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding member email in MySql: {ex.Message}");
                 return false;
@@ -96,12 +97,12 @@ namespace gym_management_system.Service
             {
                 if (sendEmail(employeeEmailModel, image))
                 {
-                    string query = $"INSERT INTO employee_email (subject, date, RemployeeID, employeeID) VALUES " +
-                                   $"('{employeeEmailModel.Subject}', now(), " +
+                    string query = $"INSERT INTO [pulseup_gym_management_system].[employee_email] (subject, date, RemployeeID, employeeID) VALUES " +
+                                   $"('{employeeEmailModel.Subject}', GETDATE(), " +
                                    $"{employeeEmailModel.EmployeeModel1.Id}, {employeeEmailModel.EmployeeModel.Id})";
-        
+
                     int rowsAffected = Global.sqlService.SqlNonQuery(query);
-        
+
                     if (rowsAffected > 0)
                     {
                         Console.WriteLine("Employee email created successfully");
@@ -119,7 +120,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding employee email in MySql: {ex.Message}");
                 return false;
@@ -132,8 +133,8 @@ namespace gym_management_system.Service
             {
                 if (sendEmail(trainerEmailModel, image))
                 {
-                    string query = $"INSERT INTO trainer_email (subject, date, trainerID, employeeID) VALUES " +
-                                   $"('{trainerEmailModel.Subject}', now(), " +
+                    string query = $"INSERT INTO [pulseup_gym_management_system].[trainer_email] (subject, date, trainerID, employeeID) VALUES " +
+                                   $"('{trainerEmailModel.Subject}', GETDATE(), " +
                                    $"{trainerEmailModel.TrainerModel.Id}, {trainerEmailModel.EmployeeModel.Id})";
 
                     int rowsAffected = Global.sqlService.SqlNonQuery(query);
@@ -155,7 +156,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding trainer email in MySql: {ex.Message}");
                 return false;

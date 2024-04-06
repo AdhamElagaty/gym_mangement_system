@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,26 +20,26 @@ namespace gym_management_system.Service
 
                 if (byId && int.TryParse(search, out int id))
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE id = {id}";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE id = {id}";
                 }
                 else if (byUsername)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE user_name = '{search}'";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE user_name = '{search}'";
                 }
                 else if (byFName || bySName)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE first_name = '{search}' OR second_name = '{search}'";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE first_name = '{search}' OR second_name = '{search}'";
                 }
                 else if (byFulName)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE CONCAT(first_name , ' ' , second_name) = '{search}'";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE CONCAT(first_name , ' ' , second_name) = '{search}'";
                 }
                 if (query == "")
                 {
                     Console.WriteLine($"Error getting from Employee search: No selected search tybe");
                     return null;
                 }
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -61,7 +62,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql employee search: {ex.Message}");
                 return null;
@@ -72,11 +73,11 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $"SELECT COUNT(*) FROM employee WHERE user_name = '{username}'";
+                string query = $"SELECT COUNT(*) FROM [pulseup_gym_management_system].[employee] WHERE user_name = '{username}'";
                 int count = Global.sqlService.sqlExecuteScalar(query);
                 return count > 0;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error checking username in MySql: {ex.Message}");
                 return false;
@@ -88,7 +89,7 @@ namespace gym_management_system.Service
             try
             {
                 int id = employeeModel.generateId();
-                string query = $"INSERT INTO employee (id, first_name, second_name, brithday, gender, picture, email, phone_number, user_name, password, account_status, admin) VALUES " +
+                string query = $"INSERT INTO [pulseup_gym_management_system].[employee] (id, first_name, second_name, brithday, gender, picture, email, phone_number, user_name, password, account_status, admin) VALUES " +
                                $"('{id}', '{employeeModel.FirstName}', '{employeeModel.SecondName}', '{employeeModel.Brithday.ToString("yyyy-MM-dd")}', " +
                                $"'{employeeModel.Gender}', '{employeeModel.Base64Image}', " +
                                $"'{employeeModel.Email}', '{employeeModel.PhoneNumber}', '{employeeModel.Username}', '{Global.mangePassword.encrypt_password(employeeModel.Password, id)}', " +
@@ -106,7 +107,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error add employee in MySql: {ex.Message}");
                 return null;
@@ -117,7 +118,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE employee SET";
+                string query = "UPDATE [pulseup_gym_management_system].[employee] SET";
                 if (firstName)
                 {
                     query += $" first_name = '{employeeModel.FirstName}',";
@@ -162,7 +163,7 @@ namespace gym_management_system.Service
                 {
                     query += $" admin = {(employeeModel.Admin ? 1 : 0)},";
                 }
-                if (query == $"UPDATE employee SET")
+                if (query == $"UPDATE [pulseup_gym_management_system].[employee] SET")
                 {
                     Console.WriteLine($"Error updating employee attributes: No selected data modfied");
                     return false;
@@ -182,7 +183,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating employee status attributes in MySql: {ex.Message}");
                 return false;
@@ -197,21 +198,21 @@ namespace gym_management_system.Service
                 string query;
                 if (accountStatus && isAdmin)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE account_status = 1 AND Admin = 1";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE account_status = 1 AND Admin = 1";
                 }
                 else if (accountStatus)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE account_status = 1";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE account_status = 1";
                 }
                 else if (isAdmin)
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee WHERE Admin = 1";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee] WHERE Admin = 1";
                 }
                 else
                 {
-                    query = $"SELECT {GetSelectColumns(includePicture)} FROM employee";
+                    query = $"SELECT {GetSelectColumns(includePicture)} FROM [pulseup_gym_management_system].[employee]";
                 }
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -233,7 +234,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql getAllEmployee: {ex.Message}");
                 return null;
@@ -245,15 +246,15 @@ namespace gym_management_system.Service
             try
             {
                 EmployeeModel employeeModel = new EmployeeModel();
-                string query = "SELECT * FROM employee where user_name = '" + userName + "' AND account_status = 1";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
-                if (reader.HasRows) 
+                string query = "SELECT * FROM [pulseup_gym_management_system].[employee] where user_name = '" + userName + "' AND account_status = 1";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
+                if (reader.HasRows)
                 {
                     reader.Read();
                     employeeModel.Id = Convert.ToInt32(reader["id"]);
                     if (Global.mangePassword.decrypt_password(reader["password"].ToString(), employeeModel.Id) != password)
                     {
-                        Console.WriteLine("Error getting from Employee login: No username or password match in activate account");
+                        Console.WriteLine("Error getting FROM [pulseup_gym_management_system].[employee] login: No username or password match in activate account");
                         return null;
                     }
                     employeeModel.FirstName = reader["first_name"].ToString();
@@ -276,7 +277,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql login of Employee: {ex.Message}");
                 return null;
@@ -288,8 +289,8 @@ namespace gym_management_system.Service
             try
             {
                 int id = 0;
-                string query = "SELECT id FROM employee ORDER BY id DESC LIMIT 1";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                string query = "SELECT TOP 1 id FROM [pulseup_gym_management_system].[employee] ORDER BY id DESC";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
                 if (reader.HasRows)
                 {
                     reader.Read();
@@ -302,7 +303,7 @@ namespace gym_management_system.Service
                     return id;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql getLastId of Employee: {ex.Message}");
                 return -1;

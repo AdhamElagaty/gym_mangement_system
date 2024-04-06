@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,14 +33,14 @@ namespace gym_management_system.Service
                 t.first_name AS trainer_first_name,
                 t.second_name AS trainer_second_name
             FROM
-                private_subscription ps
+                [pulseup_gym_management_system].[private_subscription] ps
             JOIN
-                member m ON ps.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON ps.memberID = m.id
             JOIN
-                employee e ON ps.employeeID = e.id
+                [pulseup_gym_management_system].[employee] e ON ps.employeeID = e.id
             JOIN
-                trainer t ON ps.trainerID = t.id";
-                MySqlDataReader reader = Global.sqlService.SqlSelect(query);
+                [pulseup_gym_management_system].[trainer] t ON ps.trainerID = t.id";
+                SqlDataReader reader = Global.sqlService.SqlSelect(query);
 
                 if (reader.HasRows)
                 {
@@ -85,7 +86,7 @@ namespace gym_management_system.Service
                     return null;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting private subscriptions from MySql: {ex.Message}");
                 return null;
@@ -112,13 +113,13 @@ namespace gym_management_system.Service
                 t.second_name AS trainer_second_name,
                 ps.lessons_number
             FROM 
-                private_subscription ps
+                [pulseup_gym_management_system].[private_subscription] ps
             JOIN 
-                member m ON ps.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON ps.memberID = m.id
             JOIN 
-                employee e ON ps.employeeID = e.id
+                [pulseup_gym_management_system].[employee] e ON ps.employeeID = e.id
             JOIN 
-                trainer t ON ps.trainerID = t.id
+                [pulseup_gym_management_system].[trainer] t ON ps.trainerID = t.id
             WHERE ";
 
                 if (byId && int.TryParse(searchParam, out int id))
@@ -135,7 +136,7 @@ namespace gym_management_system.Service
                     return null;
                 }
 
-                using (MySqlDataReader reader = Global.sqlService.SqlSelect(query))
+                using (SqlDataReader reader = Global.sqlService.SqlSelect(query))
                 {
                     if (reader.HasRows)
                     {
@@ -185,7 +186,7 @@ namespace gym_management_system.Service
                     }
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting from MySql private_subscription search: {ex.Message}");
                 return null;
@@ -199,16 +200,17 @@ namespace gym_management_system.Service
             {
                 string query = $@"
                 SELECT COUNT(*) 
-                FROM private_subscription ps
+                FROM [pulseup_gym_management_system].[private_subscription] ps
                 WHERE ps.memberID = {memberId}
-                AND ps.subscription_date <= NOW()
-                AND DATE_ADD(ps.subscription_date, INTERVAL 1 MONTH) >= NOW()
-                AND ps.num_of_attend < ps.lessons_number";
+                AND ps.subscription_date <= GETDATE()
+                AND DATEADD(MONTH, 1, ps.subscription_date) >= GETDATE()
+                AND ps.num_of_attend < ps.lessons_number
+                ";
 
                 int count = Global.sqlService.sqlExecuteScalar(query);
                 return count > 0;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error checking member private subscription in MySql: {ex.Message}");
                 return false;
@@ -219,9 +221,9 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = $@"INSERT INTO private_subscription 
+                string query = $@"INSERT INTO [pulseup_gym_management_system].[private_subscription] 
             (num_of_attend, subscription_date, lessons_number, memberID, employeeID, trainerID) VALUES 
-            (0, NOW(), {lessons_number}, {memberModel.Id}, {employeeModel.Id}, {trainerModel.Id})";
+            (0, GETDATE(), {lessons_number}, {memberModel.Id}, {employeeModel.Id}, {trainerModel.Id})";
 
                 int rowsAffected = Global.sqlService.SqlNonQuery(query);
 
@@ -236,7 +238,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding private subscription in MySql: {ex.Message}");
                 return false;
@@ -247,7 +249,7 @@ namespace gym_management_system.Service
         {
             try
             {
-                string query = "UPDATE private_subscription SET";
+                string query = "UPDATE [pulseup_gym_management_system].[private_subscription] SET";
 
                 if (numOfAttend)
                 {
@@ -286,7 +288,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error updating private_subscription attributes in MySql: {ex.Message}");
                 return false;
@@ -314,15 +316,15 @@ namespace gym_management_system.Service
                 t.second_name AS trainer_second_name,
                 ps.lessons_number
             FROM 
-                private_subscription ps
+                [pulseup_gym_management_system].[private_subscription] ps
             JOIN 
-                member m ON ps.memberID = m.id
+                [pulseup_gym_management_system].[member] m ON ps.memberID = m.id
             JOIN 
-                employee e ON ps.employeeID = e.id
+                [pulseup_gym_management_system].[employee] e ON ps.employeeID = e.id
             JOIN 
-                trainer t ON ps.trainerID = t.id;";
+                [pulseup_gym_management_system].[trainer] t ON ps.trainerID = t.id;";
 
-                using (MySqlDataReader reader = Global.sqlService.SqlSelect(query))
+                using (SqlDataReader reader = Global.sqlService.SqlSelect(query))
                 {
                     if (reader.HasRows)
                     {
@@ -367,7 +369,7 @@ namespace gym_management_system.Service
 
                 return privateSubscriptions;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error getting private_subscriptions: {ex.Message}");
                 return null;
@@ -379,7 +381,7 @@ namespace gym_management_system.Service
             try
             {
                 string query = $@"
-            INSERT INTO private_subscription (num_of_attend, subscription_date, lessons_number, memberID, employeeID, trainerID)
+            INSERT INTO [pulseup_gym_management_system].[private_subscription] (num_of_attend, subscription_date, lessons_number, memberID, employeeID, trainerID)
             VALUES (
                 '{privateSubscription.NumberOfAttend}', 
                 '{privateSubscription.StartDate.ToString("yyyy-MM-dd")}', 
@@ -401,7 +403,7 @@ namespace gym_management_system.Service
                     return false;
                 }
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine($"Error adding private subscription in MySql: {ex.Message}");
                 return false;
